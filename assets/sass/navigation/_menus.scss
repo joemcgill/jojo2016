@@ -75,12 +75,12 @@
 }
 
 .main-navigation .menu-item {
-	padding: .5em 1em;
+	padding: .5em 1.5em;
 	@include slug-style();
 }
 
 .main-navigation .menu-item:nth-child(2) {
-	margin-right: 350px;
+	margin-right: 380px;
 }
 
 .main-navigation a {
