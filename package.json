@@ -1,0 +1,24 @@
+{
+  "name": "jojo2016",
+  "version": "0.0.1",
+  "description": "Custom theme: Jojo2016, developed by Joe McGill",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joemcgill/jojo2016.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "Joe McGill",
+  "license": "GNU General Public License v2 or later",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-svg2png": "^0.2.5",
+    "load-grunt-tasks": "^0.4.0"
+  }
+}
