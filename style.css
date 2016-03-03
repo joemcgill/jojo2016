@@ -282,11 +282,11 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #424242;
+  font-family: "freight-sans-pro", sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.85;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -601,7 +601,7 @@ a:hover, a:active {
 }
 
 .main-navigation a {
-  color: #404040;
+  color: #424242;
   border-bottom: 1px solid #888;
 }
 
@@ -829,14 +829,57 @@ a:hover, a:active {
 .entry-summary {
   margin: 1.5em 0 0;
 }
+@media screen and (min-width: 37em) {
+  .page-content,
+  .entry-content,
+  .entry-summary {
+    font-size: 20px;
+  }
+}
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
 }
 
+.entry-title {
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-family: "freight-text-pro", sans-serif;
+  font-size: 34px;
+  line-height: 1.333;
+}
 .entry-title::first-letter {
   text-transform: capitalize;
+}
+.entry-title a,
+.entry-title a:hover,
+.entry-title a:focus,
+.entry-title a:visited {
+  color: #424242;
+  text-decoration: none;
+}
+.entry-title a:hover,
+.entry-title a:focus {
+  text-decoration: underline;
+}
+
+.entry-meta {
+  margin-bottom: 2em;
+  font-weight: 200;
+}
+
+.entry-meta .posted-on,
+.entry-meta .byline {
+  font-family: 'Brandon Grotesque';
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.entry-meta .posted-on a,
+.entry-meta .byline a {
+  color: #424242;
 }
 
 /*--------------------------------------------------------------

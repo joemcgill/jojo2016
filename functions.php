@@ -133,8 +133,9 @@ add_action( 'wp_enqueue_scripts', 'jojo2016_scripts' );
 
 function jojo_load_typekit() {
 	?>
-	<script src="https://use.typekit.net/xtv6mmw.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>	<?php
+	<script src="https://use.typekit.net/rkf4jbu.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<?php
 }
 add_action( 'wp_head', 'jojo_load_typekit' );
 

@@ -244,11 +244,11 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #424242;
+  font-family: "freight-sans-pro", sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.85;
 }
 
 h1, h2, h3, h4, h5, h6 {

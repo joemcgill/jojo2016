@@ -20,6 +20,10 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	@media screen and (min-width: 37em) {
+		font-size: 20px;
+	}
 }
 
 .page-links {
@@ -28,7 +32,40 @@
 }
 
 .entry-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-family: $font__alt;
+	font-size: 34px;
+	line-height: $font__line-height-headers;
+
 	&::first-letter {
 		text-transform: capitalize;
+	}
+
+	a,
+	a:hover,
+	a:focus,
+	a:visited {
+		color: $color__text-main;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus {
+		text-decoration: underline;
+	}
+}
+
+.entry-meta {
+	margin-bottom: 2em;
+	font-weight: 200;
+}
+
+.entry-meta .posted-on,
+.entry-meta .byline {
+	@include slug-style();
+
+	a {
+		color: $color__text-main;
 	}
 }
