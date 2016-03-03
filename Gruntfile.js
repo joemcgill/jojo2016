@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 					files: ['**/*.php']
 				},
 				svg: {
-					files: ['img/*.svg'],
+					files: ['assets/img/*.svg'],
 					tasks: ['svg2png']
 				},
 				options: {

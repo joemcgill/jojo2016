@@ -1,8 +1,12 @@
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
+	// float: left;
 	width: 100%;
+	max-width: 800px;
+	margin-top: -50px;
+	margin-left: auto;
+	margin-right: auto;
 
 	ul {
 		display: none;
@@ -48,16 +52,16 @@
 			left: auto;
 		}
 	}
-	
+
 	li {
-		float: left;
+		display: inline-block;
 		position: relative;
 
 		&:hover > a,
 		&.focus > a {
 		}
 	}
-	
+
 	a {
 		display: block;
 		text-decoration: none;
@@ -68,6 +72,20 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
+}
+
+.main-navigation .menu-item {
+	padding: .5em 1em;
+	@include slug-style();
+}
+
+.main-navigation .menu-item:nth-child(2) {
+	margin-right: 350px;
+}
+
+.main-navigation a {
+	color: $color__text-main;
+	border-bottom: 1px solid #888;
 }
 
 /* Small menu. */
