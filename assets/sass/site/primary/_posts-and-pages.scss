@@ -26,3 +26,9 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.entry-title {
+	&::first-letter {
+		text-transform: capitalize;
+	}
+}

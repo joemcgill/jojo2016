@@ -6,3 +6,8 @@
 		max-width: 100%;
 	}
 }
+
+.widget-title {
+	@include slug-style();
+	text-align: center;
+}

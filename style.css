@@ -54,6 +54,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -290,6 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+  margin-top: 0;
   margin-bottom: 1.5em;
 }
 
@@ -586,6 +591,7 @@ a:hover, a:active {
   padding: .5em 1.5em;
   font-family: 'Brandon Grotesque';
   font-size: .8em;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -733,6 +739,15 @@ a:hover, a:active {
   max-width: 100%;
 }
 
+.widget-title {
+  font-family: 'Brandon Grotesque';
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -774,7 +789,7 @@ a:hover, a:active {
 }
 
 .site-main {
-  margin: 0 25% 0 0;
+  margin: 0 calc(25% + 60px) 0 0;
 }
 
 .site-content .widget-area {
@@ -818,6 +833,10 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.entry-title::first-letter {
+  text-transform: capitalize;
 }
 
 /*--------------------------------------------------------------
