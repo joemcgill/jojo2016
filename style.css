@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Jojo2016
 Theme URI: http://jojotastic.com/
@@ -811,10 +812,9 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 4em;
 }
 
-.byline,
 .updated:not(.published) {
   display: none;
 }
@@ -844,7 +844,7 @@ a:hover, a:active {
 
 .entry-title {
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: .25em;
   font-family: "freight-text-pro", sans-serif;
   font-size: 34px;
   line-height: 1.333;
@@ -880,6 +880,68 @@ a:hover, a:active {
 .entry-meta .posted-on a,
 .entry-meta .byline a {
   color: #424242;
+}
+.entry-meta .posted-on::after,
+.entry-meta .byline::after {
+  content: "·";
+  padding: 0 .75em;
+}
+
+.entry-meta .byline:last-child::after {
+  content: none;
+}
+
+.entry-meta .tagged {
+  font-size: .85em;
+}
+.entry-meta .tagged a {
+  color: #424242;
+  padding: 0 .25em;
+}
+
+.entry-footer a {
+  color: #424242;
+}
+
+.entry-footer .cat-links {
+  display: block;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #aaa;
+}
+
+.entry-footer .comments-link,
+.entry-footer .sharing-label {
+  font-family: 'Brandon Grotesque';
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  float: left;
+}
+
+.entry-footer .comments-link::after {
+  content: "·";
+  padding: 0 .75em;
+}
+
+.entry-footer .edit-link {
+  font-family: 'Brandon Grotesque';
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  text-align: right;
+}
+
+div.sharedaddy,
+#content div.sharedaddy,
+#main div.sharedaddy {
+  clear: none !important;
+  float: left;
+  margin-top: -.25em;
+  margin-left: .5em;
 }
 
 /*--------------------------------------------------------------

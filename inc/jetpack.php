@@ -39,3 +39,14 @@ function jojo2016_infinite_scroll_render() {
 		endif;
 	}
 }
+
+
+/**
+ * Remove the automatic placement of jetpack so we can put it where we want.
+ * See: https://jetpack.me/2013/06/10/moving-sharing-icons/
+ */
+function jptweak_remove_share() {
+		remove_filter( 'the_content', 'sharing_display',19 );
+		remove_filter( 'the_excerpt', 'sharing_display',19 );
+}
+add_action( 'loop_start', 'jptweak_remove_share' );
