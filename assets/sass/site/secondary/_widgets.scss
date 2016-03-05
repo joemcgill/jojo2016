@@ -78,3 +78,25 @@
 	width: 100%;
 	margin-top: 0;
 }
+
+/**
+ * WP Instagram Widget
+ */
+
+.instagram-pics {
+	list-style: none;
+	padding: 0;
+}
+
+.instagram-pics li {
+	display: inline-block;
+	width: 48%;
+}
+
+.instagram-pics li:nth-child(2n) {
+	margin-left: 4%;
+}
+
+.instagram-pics img {
+	box-shadow: 0 0 0 1px rgba( 75, 75, 75, 0.1 );
+}
