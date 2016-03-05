@@ -733,7 +733,7 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 2em;
   /* Make sure select elements fit in widgets. */
 }
 .widget select {
@@ -747,6 +747,50 @@ a:hover, a:active {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
+}
+
+.widget ul {
+  margin-left: 0;
+}
+
+/**
+ * Wordpress Popular Posts styles
+ */
+.wpp-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.wpp-list li {
+  margin-bottom: 1.5em;
+}
+
+.wpp-list .wpp-thumbnail {
+  width: 75px;
+  margin: 0 .5em 0 0;
+}
+
+.wpp-list .wpp-post-title {
+  display: block;
+  font-family: "freight-text-pro", sans-serif;
+  font-size: 1.125em;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #424242;
+}
+.wpp-list .wpp-post-title::first-letter {
+  text-transform: capitalize;
+}
+.wpp-list .wpp-post-title::after {
+  content: "Read more \2192";
+  font-family: 'Brandon Grotesque';
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  font-size: .625em;
+  margin-top: .625em;
 }
 
 /*--------------------------------------------------------------
