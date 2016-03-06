@@ -36,7 +36,7 @@
 }
 
 .site-content .widget-area {
-	max-width: $size__site-sidebar-md;
+	max-width: $bp_1;
 
 	@media screen and (min-width: $bp_2) {
 		float: right;
