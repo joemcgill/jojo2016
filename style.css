@@ -553,7 +553,6 @@ a:hover, a:active {
   display: block;
   width: 100%;
   max-width: 800px;
-  margin-top: -50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -594,6 +593,12 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+@media screen and (min-width: 50em) {
+  .menu-primary-nav-container {
+    margin-top: -50px;
+  }
+}
+
 .main-navigation .menu-item {
   padding: .5em 1.5em;
   font-family: 'Brandon Grotesque';
@@ -603,8 +608,10 @@ a:hover, a:active {
   letter-spacing: 1px;
 }
 
-.main-navigation .menu-item:nth-child(2) {
-  margin-right: 380px;
+@media screen and (min-width: 50em) {
+  .main-navigation .menu-item:nth-child(2) {
+    margin-right: 380px;
+  }
 }
 
 .main-navigation a {
@@ -613,9 +620,14 @@ a:hover, a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
+.menu-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 50em) {
@@ -758,7 +770,8 @@ a:hover, a:active {
   display: inline-block;
   width: 42px;
   height: 42px;
-  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .icon-text {
@@ -791,6 +804,10 @@ a:hover, a:active {
 
 .icon-youtube {
   background-image: url("assets/img/icons/icon_youtube.svg");
+}
+
+.icon-menu {
+  background-image: url("assets/img/icons/icon_menu.svg");
 }
 
 /*--------------------------------------------------------------
@@ -910,11 +927,18 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 .site-header {
+  position: relative;
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
   margin-bottom: 2em;
-  padding-top: 45px;
-  padding-bottom: 45px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+@media screen and (min-width: 50em) {
+  .site-header {
+    padding-top: 2.75em;
+    padding-bottom: 2.75em;
+  }
 }
 
 .site-title {

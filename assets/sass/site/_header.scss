@@ -1,9 +1,15 @@
 .site-header {
+	position: relative;
 	border-bottom: 1px solid #e5e5e5;
 	text-align: center;
 	margin-bottom: 2em;
-	padding-top: 45px;
-	padding-bottom: 45px;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+
+	@media screen and (min-width: $bp_2) {
+		padding-top: 2.75em;
+		padding-bottom: 2.75em;
+	}
 }
 
 .site-title {
