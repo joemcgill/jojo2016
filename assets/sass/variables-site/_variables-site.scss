@@ -38,4 +38,14 @@ $font__line-height-headers: 1.333;
  * Structure
  */
 $size__site-main: 100%;
-$size__site-sidebar: 25%;
+$size__site-sidebar-md: 33%;
+$size__site-sidebar-sm: 25%;
+
+
+/**
+ * Breakpoints
+ */
+$bp_1: 25em;
+$bp_2: 50em;
+$bp_3: 67em;
+$bp_4: 75em;

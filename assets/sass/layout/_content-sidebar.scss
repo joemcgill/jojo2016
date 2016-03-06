@@ -1,26 +1,54 @@
 .site-content {
-	max-width: 67rem;
-	margin-left: auto;
-	margin-right: auto;
+	max-width: $bp_3;
+	margin-left: 1em;
+	margin-right: 1em;
+
+	@media screen and (min-width: $bp_3) {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
+	max-width: $size__site-main;
+
+	@media screen and (min-width: $bp_2) {
+		float: left;
+		margin: 0 (-$size__site-sidebar-md) 0 0;
+	}
+
+	@media screen and (min-width: $bp_3) {
+		margin: 0 (-$size__site-sidebar-sm) 0 0;
+	}
+
 }
 
 .site-main {
-	margin: 0 calc(#{$size__site-sidebar} + 60px) 0 0;
+	@media screen and (min-width: $bp_2) {
+		margin: 0 calc(#{$size__site-sidebar-md} + 40px) 0 0;
+	}
+
+	@media screen and (min-width: $bp_3) {
+		margin: 0 calc(#{$size__site-sidebar-sm} + 60px) 0 0;
+	}
+
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
+	max-width: $size__site-sidebar-md;
+	
+	@media screen and (min-width: $bp_2) {
+		float: right;
+		overflow: hidden;
+		width: $size__site-sidebar-md;
+	}
+
+	@media screen and (min-width: $bp_3) {
+		width: $size__site-sidebar-sm;
+	}
 }
 
 .site-footer {
 	clear: both;
-	width: $size__site-main;
+	max-width: $size__site-main;
 }
