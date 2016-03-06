@@ -3,7 +3,7 @@
 }
 
 .hentry {
-	margin: 0 0 4em;
+	margin: 0 0 2em;
 }
 
 .updated:not(.published) {
@@ -34,8 +34,12 @@
 	margin-top: 0;
 	margin-bottom: .25em;
 	font-family: $font__alt;
-	font-size: 34px;
+	@include font-size(1.75);
 	line-height: $font__line-height-headers;
+
+	@media screen and (min-width: $bp_2) {
+		@include font-size(2.125);
+	}
 
 	&::first-letter {
 		text-transform: capitalize;
@@ -88,6 +92,19 @@
 		padding: 0 .25em;
 	}
 }
+
+.entry-footer {
+	&::before,
+	&::after {
+		@include clearfix();
+	}
+
+	&::after {
+		@include clearfix-after();
+	}
+
+}
+
 .entry-footer a {
 	color: $color__text-main;
 }
@@ -102,20 +119,30 @@
 .entry-footer .comments-link,
 .entry-footer .sharing-label {
 	@include slug-style();
-	float: left;
 }
 
 .entry-footer .comments-link {
-	&::after {
-		content: "·";
-		padding: 0 .75em;
+	display: block;
+	margin-bottom: 1.5em;
+
+	@media screen and (min-width: $bp_1) {
+		float: left;
+
+		&::after {
+			content: "·";
+			padding: 0 .75em;
+		}
 	}
 }
 
 .entry-footer .edit-link {
 	@include slug-style();
-	display: block;
-	text-align: right;
+	display: inline-block;
+	float: right;
+}
+
+.entry-footer .sharing-label {
+	float: left;
 }
 
 div.sharedaddy,

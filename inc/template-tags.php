@@ -50,6 +50,7 @@ if ( ! function_exists( 'jojo2016_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function jojo2016_entry_footer() {
+	global $post;
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -64,6 +65,18 @@ function jojo2016_entry_footer() {
 		// 	printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'jojo2016' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		// }
 	}
+	if ( current_user_can( 'edit_post', $post->post_id ) ) {
+		edit_post_link(
+			sprintf(
+				/* translators: %s: Name of current post */
+				esc_html__( 'Edit %s', 'jojo2016' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
@@ -76,16 +89,6 @@ function jojo2016_entry_footer() {
 		echo '<span class="sharing-label">Share</span>';
 		sharing_display( '', true );
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'jojo2016' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 endif;
 

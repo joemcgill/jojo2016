@@ -934,13 +934,15 @@ a:hover, a:active {
   background: url(assets/img/logo.svg) no-repeat 0 0;
 }
 
-.site-content {
+.site-content,
+.site-footer {
   max-width: 67em;
   margin-left: 1em;
   margin-right: 1em;
 }
 @media screen and (min-width: 67em) {
-  .site-content {
+  .site-content,
+  .site-footer {
     margin-left: auto;
     margin-right: auto;
   }
@@ -990,7 +992,6 @@ a:hover, a:active {
 
 .site-footer {
   clear: both;
-  max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -1001,7 +1002,7 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin: 0 0 4em;
+  margin: 0 0 2em;
 }
 
 .updated:not(.published) {
@@ -1035,8 +1036,15 @@ a:hover, a:active {
   margin-top: 0;
   margin-bottom: .25em;
   font-family: "freight-text-pro", sans-serif;
-  font-size: 34px;
+  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 1.333;
+}
+@media screen and (min-width: 50em) {
+  .entry-title {
+    font-size: 34px;
+    font-size: 2.125rem;
+  }
 }
 .entry-title::first-letter {
   text-transform: capitalize;
@@ -1088,6 +1096,15 @@ a:hover, a:active {
   padding: 0 .25em;
 }
 
+.entry-footer::before, .entry-footer::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+.entry-footer::after {
+  clear: both;
+}
+
 .entry-footer a {
   color: #424242;
 }
@@ -1106,12 +1123,20 @@ a:hover, a:active {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
-  float: left;
 }
 
-.entry-footer .comments-link::after {
-  content: "·";
-  padding: 0 .75em;
+.entry-footer .comments-link {
+  display: block;
+  margin-bottom: 1.5em;
+}
+@media screen and (min-width: 25em) {
+  .entry-footer .comments-link {
+    float: left;
+  }
+  .entry-footer .comments-link::after {
+    content: "·";
+    padding: 0 .75em;
+  }
 }
 
 .entry-footer .edit-link {
@@ -1120,8 +1145,12 @@ a:hover, a:active {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
-  display: block;
-  text-align: right;
+  display: inline-block;
+  float: right;
+}
+
+.entry-footer .sharing-label {
+  float: left;
 }
 
 div.sharedaddy,
