@@ -601,7 +601,7 @@ a:hover, a:active {
 
 .main-navigation .menu-item {
   padding: .5em 1.5em;
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -822,7 +822,7 @@ a:hover, a:active {
 }
 
 .widget-title {
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -864,7 +864,7 @@ a:hover, a:active {
 }
 .wpp-list .wpp-post-title::after {
   content: "Read more \2192";
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -888,7 +888,7 @@ a:hover, a:active {
 }
 
 #mc_signup .mc_var_label {
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -1092,7 +1092,7 @@ a:hover, a:active {
 
 .entry-meta .posted-on,
 .entry-meta .byline {
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -1142,7 +1142,7 @@ a:hover, a:active {
 
 .entry-footer .comments-link,
 .entry-footer .sharing-label {
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
@@ -1164,7 +1164,7 @@ a:hover, a:active {
 }
 
 .entry-footer .edit-link {
-  font-family: 'Brandon Grotesque';
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
   font-weight: normal;
   text-transform: uppercase;
