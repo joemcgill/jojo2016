@@ -7,14 +7,15 @@ $color__background-hr: #ccc;
 $color__background-button: #4A4A4A;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-footer: darken(#FF0050, 8%);
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-button: #fff;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
+$color__link: #FF0050;
+$color__link-visited: #FF0050;
+$color__link-hover: #FF0050;
 $color__text-main: #424242;
 
 $color__border-button: #4A4A4A;
@@ -40,7 +41,7 @@ $font__line-height-headers: 1.333;
  */
 $size__site-main: 100%;
 $size__site-sidebar-md: 33%;
-$size__site-sidebar-sm: 25%;
+$size__site-sidebar-sm: 30%;
 
 
 /**
