@@ -8,88 +8,87 @@
  */
 
 if ( ! function_exists( 'jojo2016_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function jojo2016_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function jojo2016_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			esc_html_x( '%s', 'post date', 'jojo2016' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		$byline = sprintf(
+			esc_html_x( 'By %s', 'post author', 'jojo2016' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+
+		$tagged = get_the_tag_list( 'Tagged: ', ' ' );
+
+		if ( $tagged ) {
+			$tagged = sprintf( '<span class="tagged">%s</span>', get_the_tag_list( 'Tagged: ', ' ' ) );
+		};
+
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>' . $tagged; // WPCS: XSS OK.
+
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'jojo2016' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'By %s', 'post author', 'jojo2016' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	$tagged = get_the_tag_list( 'Tagged: ', ' ');
-
-	if ( $tagged ) {
-		$tagged = sprintf( '<span class="tagged">%s</span>', get_the_tag_list( 'Tagged: ', ' ') );
-	};
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>' . $tagged; // WPCS: XSS OK.
-
-}
 endif;
 
 if ( ! function_exists( 'jojo2016_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function jojo2016_entry_footer() {
-	global $post;
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'jojo2016' ) );
-		if ( $categories_list && jojo2016_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'jojo2016' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function jojo2016_entry_footer() {
+		global $post;
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'jojo2016' ) );
+			if ( $categories_list && jojo2016_categorized_blog() ) {
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'jojo2016' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+			// /* translators: used between list items, there is a space after the comma */
+			// $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jojo2016' ) );
+			// if ( $tags_list ) {
+			// 	printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'jojo2016' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			// }
+		}
+		if ( current_user_can( 'edit_post', $post->post_id ) ) {
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'jojo2016' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
 		}
 
-		// /* translators: used between list items, there is a space after the comma */
-		// $tags_list = get_the_tag_list( '', esc_html__( ', ', 'jojo2016' ) );
-		// if ( $tags_list ) {
-		// 	printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'jojo2016' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		// }
-	}
-	if ( current_user_can( 'edit_post', $post->post_id ) ) {
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'jojo2016' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-	}
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Comment', 'jojo2016' ), esc_html__( '1 Comment', 'jojo2016' ), esc_html__( '% Comments', 'jojo2016' ) );
+			echo '</span>';
+		}
 
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Comment', 'jojo2016' ), esc_html__( '1 Comment', 'jojo2016' ), esc_html__( '% Comments', 'jojo2016' ) );
-		echo '</span>';
+		// Show sharing links.
+		if ( function_exists( 'sharing_display' ) ) {
+			echo '<span class="sharing-label">Share</span>';
+			sharing_display( '', true );
+		}
 	}
-
-	// Show sharing links.
-	if ( function_exists( 'sharing_display' ) ) {
-		echo '<span class="sharing-label">Share</span>';
-		sharing_display( '', true );
-	}
-}
 endif;
 
 /**
@@ -167,6 +166,7 @@ function jojo2016_the_category_items( $categories = array() ) {
 		);
 
 		$post_query_args = array(
+			// @codingStandardsIgnoreLine
 			'cat'            => $category->cat_ID,
 			'meta_query'     => array(
 				'key'     => '_thumbnail_id',
