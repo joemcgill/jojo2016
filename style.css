@@ -1187,6 +1187,7 @@ ul.instagram-pics {
   margin: 0 0 1.5em;
 }
 
+.page-title,
 .entry-title {
   margin-top: 0;
   margin-bottom: .25em;
@@ -1196,14 +1197,20 @@ ul.instagram-pics {
   line-height: 1.333;
 }
 @media screen and (min-width: 50em) {
+  .page-title,
   .entry-title {
     font-size: 34px;
     font-size: 2.125rem;
   }
 }
+.page-title::first-letter,
 .entry-title::first-letter {
   text-transform: capitalize;
 }
+.page-title a,
+.page-title a:hover,
+.page-title a:focus,
+.page-title a:visited,
 .entry-title a,
 .entry-title a:hover,
 .entry-title a:focus,
@@ -1211,9 +1218,22 @@ ul.instagram-pics {
   color: #424242;
   text-decoration: none;
 }
+.page-title a:hover,
+.page-title a:focus,
 .entry-title a:hover,
 .entry-title a:focus {
   text-decoration: underline;
+}
+
+.archive .page-title {
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.333;
+  margin-bottom: 1em;
+  font-size: 1.125em;
 }
 
 .entry-meta {

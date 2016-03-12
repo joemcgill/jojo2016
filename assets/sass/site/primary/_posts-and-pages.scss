@@ -30,6 +30,8 @@
 	margin: 0 0 1.5em;
 }
 
+
+.page-title,
 .entry-title {
 	margin-top: 0;
 	margin-bottom: .25em;
@@ -57,6 +59,13 @@
 	a:focus {
 		text-decoration: underline;
 	}
+}
+
+.archive .page-title {
+	@include slug-style();
+
+	margin-bottom: 1em;
+	font-size: 1.125em;
 }
 
 .entry-meta {
