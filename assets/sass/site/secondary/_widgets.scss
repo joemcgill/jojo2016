@@ -83,18 +83,26 @@
  * WP Instagram Widget
  */
 
-.instagram-pics {
-	list-style: none;
+ul.instagram-pics {
+	max-width: calc( 300px + 1em );
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0;
+	list-style: none;
 }
 
 .instagram-pics li {
 	display: inline-block;
-	width: 48%;
+	width: calc(50% - 0.5em);
+	margin-bottom: 1em;
+}
+
+.instagram-pics li img {
+	vertical-align: top;
 }
 
 .instagram-pics li:nth-child(2n) {
-	margin-left: 4%;
+	margin-left: 1em;
 }
 
 .instagram-pics img {
