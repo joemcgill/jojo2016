@@ -555,6 +555,7 @@ a:hover, a:active {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  z-index: -1;
 }
 .main-navigation ul {
   display: none;
@@ -957,6 +958,11 @@ ul.instagram-pics {
     padding-top: 2.75em;
     padding-bottom: 2.75em;
   }
+}
+
+.site-branding {
+  position: relative;
+  z-index: 10;
 }
 
 .site-title {
