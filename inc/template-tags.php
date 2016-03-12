@@ -139,8 +139,8 @@ function jojo2016_the_category_items( $categories = array() ) {
 	$defaults = array(
 		'fashion',
 		'home-decor-interiors',
-		'happy-holidays',
-		'shopping-gift-guides',
+		'recipes',
+		'travel',
 	);
 
 	if ( ! is_array( $categories ) || empty( $categories ) ) {
