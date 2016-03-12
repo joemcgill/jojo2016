@@ -34,13 +34,13 @@ if ( ! function_exists( 'jojo2016_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		$tagged = get_the_tag_list( 'Tagged: ', ' ' );
+		$cat_list = get_the_category_list( ', ' );
 
-		if ( $tagged ) {
-			$tagged = sprintf( '<span class="tagged">%s</span>', get_the_tag_list( 'Tagged: ', ' ' ) );
+		if ( $cat_list && jojo2016_categorized_blog() ) {
+			$categories = sprintf( '<span class="category-links">' . esc_html__( 'Posted in %1$s', 'jojo2016' ) . '</span>', $cat_list ); // WPCS: XSS OK.
 		};
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>' . $tagged; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>' . $categories; // WPCS: XSS OK.
 
 	}
 endif;
@@ -54,9 +54,9 @@ if ( ! function_exists( 'jojo2016_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'jojo2016' ) );
-			if ( $categories_list && jojo2016_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'jojo2016' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			$tags_list = get_the_tag_list( esc_html__( ', ', 'jojo2016' ) );
+			if ( $tags_list ) {
+				printf( '<span class="tag-links">' . esc_html__( 'Tagged %1$s', 'jojo2016' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 
 			// /* translators: used between list items, there is a space after the comma */

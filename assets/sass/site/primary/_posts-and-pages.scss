@@ -84,7 +84,7 @@
 	}
 }
 
-.entry-meta .tagged {
+.entry-meta .category-links {
 	font-size: .85em;
 
 	a {
@@ -109,7 +109,7 @@
 	color: $color__text-main;
 }
 
-.entry-footer .cat-links {
+.entry-footer .tag-links {
 	display: block;
 	margin-bottom: 1.5em;
 	padding-bottom: 1em;
@@ -128,7 +128,7 @@
 	@media screen and (min-width: $bp_1) {
 		float: left;
 
-		&::after {
+		&:not(:last-child)::after {
 			content: "·";
 			padding: 0 .75em;
 		}
@@ -139,6 +139,10 @@
 	@include slug-style();
 	display: inline-block;
 	float: right;
+
+	&::before {
+		content: "✏︎ ";
+	}
 }
 
 .entry-footer .sharing-label {

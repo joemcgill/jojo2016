@@ -1244,10 +1244,10 @@ ul.instagram-pics {
   content: none;
 }
 
-.entry-meta .tagged {
+.entry-meta .category-links {
   font-size: .85em;
 }
-.entry-meta .tagged a {
+.entry-meta .category-links a {
   color: #424242;
   padding: 0 .25em;
 }
@@ -1265,7 +1265,7 @@ ul.instagram-pics {
   color: #424242;
 }
 
-.entry-footer .cat-links {
+.entry-footer .tag-links {
   display: block;
   margin-bottom: 1.5em;
   padding-bottom: 1em;
@@ -1290,7 +1290,7 @@ ul.instagram-pics {
   .entry-footer .comments-link {
     float: left;
   }
-  .entry-footer .comments-link::after {
+  .entry-footer .comments-link:not(:last-child)::after {
     content: "·";
     padding: 0 .75em;
   }
@@ -1305,6 +1305,9 @@ ul.instagram-pics {
   line-height: 1.333;
   display: inline-block;
   float: right;
+}
+.entry-footer .edit-link::before {
+  content: "✏︎ ";
 }
 
 .entry-footer .sharing-label {
