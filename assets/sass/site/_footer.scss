@@ -1,0 +1,111 @@
+.site-footer {
+	clear: both;
+	padding-top: 1.5em;
+	border-top: 1px solid #e5e5e5;
+	// background: rgba( $color__background-footer, .8 );
+}
+
+.site-categories {
+	text-align: center;
+}
+
+.site-categories .section-slug {
+	@include slug-style();
+
+	margin-top: 0;
+	font-weight: bold;
+}
+
+.site-categories .category-list {
+	max-width: calc( 300px + 1em );
+	margin-left: auto;
+	margin-right: auto;
+
+	&::before,
+	&::after {
+		@include clearfix();
+	}
+
+	&::after {
+		@include clearfix-after();
+	}
+
+	@media screen and ( min-width: $bp_2 ) {
+		max-width: calc( 600px + 6em );
+	}
+}
+
+.site-categories .category-item {
+	float: left;
+	width: calc( 50% - 0.5em ); // Half the container minus half the gutter.
+	max-width: 150px;
+	margin-right: 1em;
+	margin-bottom: 1.5em;
+	vertical-align: top;
+
+	&:nth-child(2n) {
+		margin-right: 0;
+	}
+
+	&:nth-child(3) {
+		clear: both;
+	}
+
+	@media screen and ( min-width: $bp_2 ) {
+		width: calc( 25% - 1.5em ); // 25% the container minus 25% of the gutter.
+		margin-right: 2em;
+
+		&:nth-child(2n) {
+			margin-right: 2em;
+		}
+
+		&:nth-child(3) {
+			clear: none;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.site-categories .category-name {
+	@include slug-style();
+
+	font-size: .7em;
+
+	a,
+	a:visited {
+		color: $color__text-main;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.site-footer-meta {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	background: $color__background-footer;
+	color: #fff;
+}
+
+.site-footer-meta a,
+.site-footer-meta a:visited {
+	color: $color__link-footer;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: $color__link-footer;
+		text-decoration: none;
+	}
+}
+
+.site-categories,
+.site-info  {
+	@extend .site-content;
+}

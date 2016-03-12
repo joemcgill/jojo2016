@@ -134,3 +134,62 @@ function jojo2016_category_transient_flusher() {
 }
 add_action( 'edit_category', 'jojo2016_category_transient_flusher' );
 add_action( 'save_post',     'jojo2016_category_transient_flusher' );
+
+
+function jojo2016_the_category_items( $categories = array() ) {
+	$defaults = array(
+		'fashion',
+		'home-decor-interiors',
+		'happy-holidays',
+		'shopping-gift-guides',
+	);
+
+	if ( ! is_array( $categories ) || empty( $categories ) ) {
+		$categories = $defaults;
+	}
+
+	foreach ( $categories as $slug ) {
+		// Get the ID of a given category.
+		$category = get_category_by_slug( $slug );
+
+		// Skip if the category isn't found.
+		if ( ! $category ) {
+			continue;
+		}
+
+		// Get the URL of this category.
+		$category_link = get_term_link( $category->term_id );
+
+		// Create the thumbnail.
+		$post_meta_query = array(
+			'key' => '_thumbnail_id',
+			'compare' => 'EXISTS',
+		);
+
+		$post_query_args = array(
+			'cat'            => $category->cat_ID,
+			'meta_query'     => array(
+				'key'     => '_thumbnail_id',
+				'compare' => 'EXISTS',
+			),
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+		);
+
+		$post_query = new WP_Query( $post_query_args );
+
+		if ( $post_query ) {
+			$category_thumbnail_url = get_the_post_thumbnail_url( $post_query->posts[0], 'thumbnail' );
+		} else {
+			$category_thumbnail_url = 'https://placehold.it/400x400';
+		}
+
+		$category_thumbnail = sprintf( '<img class="category-thumb" src="%s">', esc_url( $category_thumbnail_url ) );
+
+		// Get the name of this category
+		$category_name = $category->name;
+
+		// Output the category items.
+		printf( '<div class="category-item"><a href="%1$s">%2$s</a><div class="category-name"><a href="%1$s">%3$s</a></div></div>', $category_link, $category_thumbnail, $category_name );
+	}
+}

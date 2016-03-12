@@ -1,5 +1,4 @@
-.site-content,
-.site-info {
+.site-content {
 	max-width: $bp_3;
 	margin-left: 1em;
 	margin-right: 1em;
@@ -47,11 +46,4 @@
 	@media screen and (min-width: $bp_3) {
 		width: $size__site-sidebar-sm;
 	}
-}
-
-.site-footer {
-	clear: both;
-	padding-top: 2em;
-	padding-bottom: 2em;
-	background: linear-gradient(  0deg, rgba( $color__background-footer, .15 ) 60%, rgba( $color__background-footer, 0 ) );
 }
