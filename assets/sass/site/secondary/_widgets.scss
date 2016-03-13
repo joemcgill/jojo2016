@@ -108,3 +108,15 @@ ul.instagram-pics {
 .instagram-pics img {
 	box-shadow: 0 0 0 1px rgba( 75, 75, 75, 0.1 );
 }
+
+/**
+ * Widget text
+ */
+.widget_text {
+	padding: .25em .5em;
+	border-radius: 3px;
+
+	&:last-child {
+		border: 2px solid rgba(74, 74, 74, .3);
+	}
+}

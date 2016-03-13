@@ -795,13 +795,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Icons
 --------------------------------------------------------------*/
-#text-3 {
-  border: 2px solid rgba(74, 74, 74, 0.3);
-}
-
 .icon-list {
   list-style: none;
   padding: 0;
+  margin-bottom: .5em;
   text-align: center;
 }
 
@@ -809,6 +806,13 @@ a:hover, a:active {
   display: inline-block;
   margin-left: 2px;
   margin-right: 2px;
+  line-height: 1;
+}
+
+.icon-list .list-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .icon {
@@ -977,6 +981,17 @@ ul.instagram-pics {
 
 .instagram-pics img {
   box-shadow: 0 0 0 1px rgba(75, 75, 75, 0.1);
+}
+
+/**
+ * Widget text
+ */
+.widget_text {
+  padding: .25em .5em;
+  border-radius: 3px;
+}
+.widget_text:last-child {
+  border: 2px solid rgba(74, 74, 74, 0.3);
 }
 
 /*--------------------------------------------------------------
