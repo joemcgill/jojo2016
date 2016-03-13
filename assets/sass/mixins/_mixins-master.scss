@@ -23,7 +23,7 @@
 	clear: both;
 }
 
-
+// Apply slug styling to an item.
 @mixin slug-style() {
 	font-family: $font__alt2;
 	font-size: .8em;
@@ -31,4 +31,11 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	line-height: $font__line-height-headers;
+}
+
+// Add browser transition rules
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
 }

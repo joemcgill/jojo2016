@@ -147,6 +147,23 @@ endif;
 add_action( 'wp_head', 'jojo_load_typekit' );
 
 /**
+ * Filter the search form markup.
+ */
+function jojo2016_filter_search_form( $form ) {
+	return preg_replace( '|placeholder="[^"]+"|', 'placeholder="Search Jojotastic"', $form );
+}
+add_filter( 'get_search_form', 'jojo2016_filter_search_form' );
+
+/**
+ * Filter the archive page title HTML.
+ */
+function jojo2016_filter_the_archive_title( $title ) {
+	return preg_replace( '|: (.+)|', ': <span class="archive-title">$1</span>', $title );
+}
+add_filter( 'get_the_archive_title', 'jojo2016_filter_the_archive_title' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

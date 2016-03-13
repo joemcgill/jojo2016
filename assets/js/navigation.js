@@ -5,7 +5,7 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, subMenus, i, len;
+	var container, button, menu, links, subMenus, i, len, search, drawer;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -18,6 +18,10 @@
 	}
 
 	menu = container.getElementsByTagName( 'ul' )[0];
+
+	search = container.getElementsByClassName( 'menu-item' )[3]; // Forth item
+
+	drawer = document.getElementsByClassName( 'site-header-drawer' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -41,6 +45,10 @@
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
+
+	search.onclick = function() {
+		drawer.classList.toggle( 'active' );
+	}
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );

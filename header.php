@@ -45,6 +45,11 @@
 			<div class="menu-toggle icon-menu" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'jojo2016' ); ?></span></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+
+		<div class="site-header-drawer">
+			<?php get_search_form(); ?>
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

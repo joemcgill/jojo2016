@@ -61,11 +61,17 @@
 	}
 }
 
-.archive .page-title {
+.archive .page-title,
+.search .page-title {
 	@include slug-style();
 
 	margin-bottom: 1em;
 	font-size: 1.125em;
+
+	.archive-title,
+	.search-term {
+		font-weight: 900;
+	}
 }
 
 .entry-meta {

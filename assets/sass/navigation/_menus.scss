@@ -8,10 +8,14 @@
 	z-index: -1;
 
 	ul {
-		display: none;
+		max-height: 0;
+		overflow: hidden;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		will-change: transform;
+		transition: max-height 300ms ease-in-out;
+		transition-delay: 0s;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -96,9 +100,12 @@
 }
 
 /* Small menu. */
-.menu-toggle,
+.menu-toggle {
+	display: block;
+}
+
 .main-navigation.toggled ul {
-	// display: block;
+	max-height: 300px;
 }
 
 .menu-toggle {
@@ -117,7 +124,37 @@
 	}
 
 	.main-navigation ul {
+		max-height: none;
+	}
+}
+
+@media screen and ( max-width: $bp_2 ) {
+	.main-navigation  {
+		background-color: $color__background-footer;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.main-navigation .menu-item {
 		display: block;
+		border-top: 1px solid #aaa;
+
+		&:first-child {
+			border-top: none;
+		}
+
+		// Hide the search item
+		&:last-child {
+			display: none
+		}
+
+		a,
+		a:visited {
+			padding-top: .5em;
+			padding-bottom: .5em;
+			border-bottom: none;
+			color: #fff;
+		}
 	}
 }
 
