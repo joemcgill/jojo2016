@@ -17,6 +17,7 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
+	-webkit-appearance: none;
 
 	&:focus {
 		color: $color__text-input-focus;
