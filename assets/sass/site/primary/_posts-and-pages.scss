@@ -172,3 +172,59 @@ div.sharedaddy,
 	margin-top: -.25em;
 	margin-left: .5em;
 }
+
+/**
+ * Portfolio
+ */
+
+.portfolio-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.portfolio-list .jetpack-portfolio {
+	max-width: calc( 50% - .5em );
+	margin-right: 1em;
+
+	&:nth-child(2n) {
+		margin-right: 0;
+	}
+
+	@media screen and (min-width: $bp_2) {
+		max-width: calc( 25% - 1.5em );
+		margin-right: 2em;
+
+		&:nth-child(2n) {
+			margin-right: 2em;
+		}
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.portfolio-list .portfolio-title {
+	@include slug-style();
+	margin-top: .25em;
+	font-weight: bold;
+
+	a,
+	a:visited {
+		color: $color__text-main;
+		text-decoration: none;
+		border-bottom: 1px solid #888;
+		line-height: 1.75;
+
+		&:hover,
+		&:focus {
+			border-bottom: none;
+		}
+	}
+}
+
+.portfolio-list .wp-post-thumbnail {
+	vertical-align: bottom;
+}

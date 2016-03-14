@@ -1257,6 +1257,10 @@ ul.instagram-pics {
   }
 }
 
+.site-main.full-width {
+  margin-right: 0;
+}
+
 .site-content .widget-area, .site-categories .widget-area,
 .site-info .widget-area {
   max-width: 25em;
@@ -1477,6 +1481,71 @@ div.sharedaddy,
   float: left;
   margin-top: -.25em;
   margin-left: .5em;
+}
+
+/**
+ * Portfolio
+ */
+.portfolio-list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.portfolio-list .jetpack-portfolio {
+  max-width: calc( 50% - .5em );
+  margin-right: 1em;
+}
+.portfolio-list .jetpack-portfolio:nth-child(2n) {
+  margin-right: 0;
+}
+@media screen and (min-width: 50em) {
+  .portfolio-list .jetpack-portfolio {
+    max-width: calc( 25% - 1.5em );
+    margin-right: 2em;
+  }
+  .portfolio-list .jetpack-portfolio:nth-child(2n) {
+    margin-right: 2em;
+  }
+  .portfolio-list .jetpack-portfolio:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+.portfolio-list .portfolio-title {
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.333;
+  margin-top: .25em;
+  font-weight: bold;
+}
+.portfolio-list .portfolio-title a,
+.portfolio-list .portfolio-title a:visited {
+  color: #424242;
+  text-decoration: none;
+  border-bottom: 1px solid #888;
+  line-height: 1.75;
+}
+.portfolio-list .portfolio-title a:hover, .portfolio-list .portfolio-title a:focus,
+.portfolio-list .portfolio-title a:visited:hover,
+.portfolio-list .portfolio-title a:visited:focus {
+  border-bottom: none;
+}
+
+.portfolio-list .wp-post-thumbnail {
+  vertical-align: bottom;
 }
 
 /*--------------------------------------------------------------

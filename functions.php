@@ -76,6 +76,9 @@ if ( ! function_exists( 'jojo2016_setup' ) ) :
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
+
+		// Add custom image sizes.
+		add_image_size( 'square-500', 500, 500, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'jojo2016_setup' );
