@@ -1198,7 +1198,7 @@ ul.instagram-pics {
 .site-footer-meta {
   padding-top: 2em;
   padding-bottom: 2em;
-  font-size: .8em;
+  font-size: .85em;
   background: #4A4A4A;
   color: #fff;
 }
@@ -1215,15 +1215,17 @@ ul.instagram-pics {
   text-decoration: none;
 }
 
-.site-content, .site-categories,
 .site-info {
+  max-width: 78.82353em !important;
+}
+
+.site-content, .site-categories, .site-info {
   max-width: 67em;
   margin-left: 1em;
   margin-right: 1em;
 }
 @media screen and (min-width: 67em) {
-  .site-content, .site-categories,
-  .site-info {
+  .site-content, .site-categories, .site-info {
     margin-left: auto;
     margin-right: auto;
   }
@@ -1262,23 +1264,20 @@ ul.instagram-pics {
   margin-right: 0;
 }
 
-.site-content .widget-area, .site-categories .widget-area,
-.site-info .widget-area {
+.site-content .widget-area, .site-categories .widget-area, .site-info .widget-area {
   max-width: 25em;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 50em) {
-  .site-content .widget-area, .site-categories .widget-area,
-  .site-info .widget-area {
+  .site-content .widget-area, .site-categories .widget-area, .site-info .widget-area {
     float: right;
     overflow: hidden;
     width: 33%;
   }
 }
 @media screen and (min-width: 67em) {
-  .site-content .widget-area, .site-categories .widget-area,
-  .site-info .widget-area {
+  .site-content .widget-area, .site-categories .widget-area, .site-info .widget-area {
     width: 30%;
   }
 }

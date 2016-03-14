@@ -6,6 +6,7 @@
 }
 
 .site-categories {
+	@extend .site-content;
 	text-align: center;
 }
 
@@ -89,7 +90,7 @@
 .site-footer-meta {
 	padding-top: 2em;
 	padding-bottom: 2em;
-	font-size: .8em;
+	font-size: .85em;
 	background: $color__background-footer;
 	color: #fff;
 }
@@ -106,7 +107,7 @@
 	}
 }
 
-.site-categories,
-.site-info  {
+.site-info {
 	@extend .site-content;
+	max-width: (67em / .85) !important;
 }
