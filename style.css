@@ -531,13 +531,13 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #FF0050;
+  color: #E6D74D;
 }
 a:visited {
-  color: #FF0050;
+  color: #E6D74D;
 }
 a:hover, a:focus, a:active {
-  color: #FF0050;
+  color: #E6D74D;
 }
 a:focus {
   outline: thin dotted;
@@ -1350,12 +1350,19 @@ ul.instagram-pics {
 .entry-title a:visited {
   color: #424242;
   text-decoration: none;
+  transition: color 300ms ease-out;
 }
 .page-title a:hover,
 .page-title a:focus,
 .entry-title a:hover,
 .entry-title a:focus {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #000;
+  background-image: linear-gradient(to top, #fff 0%, #fff 49%, #E6D74D 50%, #E6D74D 100%);
+  background-size: 5px 5px;
+  background-repeat: repeat-x;
+  background-position: 0 96.5%;
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0.05em 0 #fff, -0.05em 0 #fff, 0.09em 0 #fff, -0.075em 0 #fff;
 }
 
 .archive .page-title,
