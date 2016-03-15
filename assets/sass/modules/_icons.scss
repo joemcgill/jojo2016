@@ -62,3 +62,10 @@
 .icon-menu {
 	background-image: url("assets/img/icons/icon_menu.svg");
 }
+
+
+/* Sharedaddy Overrides */
+.sd-social-icon .sd-content ul li[class*='share-'] a.sd-button  {
+	background-color: $color__background-button !important;
+	color: #fff !important;
+}

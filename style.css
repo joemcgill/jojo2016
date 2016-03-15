@@ -860,6 +860,12 @@ a:hover, a:active {
   background-image: url("assets/img/icons/icon_menu.svg");
 }
 
+/* Sharedaddy Overrides */
+.sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+  background-color: #4A4A4A !important;
+  color: #fff !important;
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
