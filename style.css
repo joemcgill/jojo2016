@@ -1308,6 +1308,10 @@ ul.instagram-pics {
   display: inline;
 }
 
+.entry-content .size-full {
+  width: 100%;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
