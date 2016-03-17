@@ -20,6 +20,20 @@
 	width: 100%;
 }
 
+.entry-content a:not(.more-link) {
+	display: inline;
+	padding-left: .125em;
+	padding-right: .125em;
+	background-color: rgba($color__link, .4);
+	text-decoration: none;
+	transition: background-color 300ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: rgba($color__link, .7);
+	}
+}
+
 .page-content,
 .entry-content,
 .entry-summary {

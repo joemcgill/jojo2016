@@ -531,13 +531,14 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #E6D74D;
+  color: #424242;
 }
 a:visited {
-  color: #E6D74D;
+  color: #424242;
 }
 a:hover, a:focus, a:active {
-  color: #E6D74D;
+  color: #424242;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -1311,6 +1312,18 @@ ul.instagram-pics {
 .entry-content .size-full,
 .entry-content .size-post-thumbnail {
   width: 100%;
+}
+
+.entry-content a:not(.more-link) {
+  display: inline;
+  padding-left: .125em;
+  padding-right: .125em;
+  background-color: rgba(230, 215, 77, 0.4);
+  text-decoration: none;
+  transition: background-color 300ms ease-in-out;
+}
+.entry-content a:not(.more-link):hover, .entry-content a:not(.more-link):focus {
+  background-color: rgba(230, 215, 77, 0.7);
 }
 
 .page-content,
