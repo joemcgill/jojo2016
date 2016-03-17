@@ -1308,7 +1308,8 @@ ul.instagram-pics {
   display: inline;
 }
 
-.entry-content .size-full {
+.entry-content .size-full,
+.entry-content .size-post-thumbnail {
   width: 100%;
 }
 
