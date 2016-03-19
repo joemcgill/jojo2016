@@ -36,7 +36,12 @@
 
 }
 
-.site-main.full-width {
+.content-area.full-width {
+	float: none;
+	margin-right: 0;
+}
+
+.full-width .site-main {
 	margin-right: 0;
 }
 

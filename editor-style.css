@@ -366,6 +366,18 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
+/* Alternate styles */
+.list-inline {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list-inline li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */

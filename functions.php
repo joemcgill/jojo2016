@@ -107,13 +107,13 @@ if ( ! function_exists( 'jojo2016_widgets_init' ) ) :
 	 */
 	function jojo2016_widgets_init() {
 		register_sidebar( array(
-			'name'          => esc_html__( 'Sidebar', 'jojo2016' ),
-			'id'            => 'sidebar-1',
-			'description'   => '',
+			'name'					=> esc_html__( 'Sidebar', 'jojo2016' ),
+			'id'						=> 'sidebar-1',
+			'description'	 => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget'	=> '</section>',
+			'before_title'	=> '<h2 class="widget-title">',
+			'after_title'	 => '</h2>',
 		) );
 	}
 endif;
@@ -165,7 +165,6 @@ function jojo2016_filter_the_archive_title( $title ) {
 	return preg_replace( '|: (.+)|', ': <span class="archive-title">$1</span>', $title );
 }
 add_filter( 'get_the_archive_title', 'jojo2016_filter_the_archive_title' );
-
 
 /**
  * Implement the Custom Header feature.
