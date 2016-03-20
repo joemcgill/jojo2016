@@ -1546,7 +1546,7 @@ div.sharedaddy,
 .portfolio-list .jetpack-portfolio:nth-child(2n) {
   margin-right: 0;
 }
-.portfolio-list .jetpack-portfolio:nth-child(3n) {
+.portfolio-list .jetpack-portfolio:nth-child(2n + 1) {
   clear: left;
 }
 @media screen and (min-width: 50em) {
@@ -1557,13 +1557,13 @@ div.sharedaddy,
   .portfolio-list .jetpack-portfolio:nth-child(2n) {
     margin-right: 2em;
   }
-  .portfolio-list .jetpack-portfolio:nth-child(3n) {
+  .portfolio-list .jetpack-portfolio:nth-child(2n + 1) {
     clear: none;
   }
   .portfolio-list .jetpack-portfolio:nth-child(4n) {
     margin-right: 0;
   }
-  .portfolio-list .jetpack-portfolio:nth-child(5n) {
+  .portfolio-list .jetpack-portfolio:nth-child(4n + 1) {
     clear: left;
   }
 }

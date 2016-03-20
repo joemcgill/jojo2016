@@ -216,7 +216,7 @@ div.sharedaddy,
 		margin-right: 0;
 	}
 
-	&:nth-child(3n) {
+	&:nth-child(2n + 1) {
 		clear: left;
 	}
 
@@ -228,7 +228,7 @@ div.sharedaddy,
 			margin-right: 2em;
 		}
 
-		&:nth-child(3n) {
+		&:nth-child(2n + 1) {
 			clear: none;
 		}
 
@@ -236,7 +236,7 @@ div.sharedaddy,
 			margin-right: 0;
 		}
 
-		&:nth-child(5n) {
+		&:nth-child(4n + 1) {
 			clear: left;
 		}
 	}
