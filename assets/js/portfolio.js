@@ -13,7 +13,7 @@ var jojo = jojo || {};
 
 		tagName: 'article',
 
-		className: 'jetpack-portfolio',
+		className: 'jetpack-portfolio type-jetpack-portfolio status-publish has-post-thumbnail hentry jetpack-portfolio-type-social',
 
 		template: wp.template( 'portfolio-item' ),
 
