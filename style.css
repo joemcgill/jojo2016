@@ -1535,26 +1535,19 @@ div.sharedaddy,
  * Portfolio
  */
 .portfolio-list {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  display: block;
 }
 
 .portfolio-list .jetpack-portfolio {
+  float: left;
   max-width: calc( 50% - .5em );
   margin-right: 1em;
 }
 .portfolio-list .jetpack-portfolio:nth-child(2n) {
   margin-right: 0;
+}
+.portfolio-list .jetpack-portfolio:nth-child(3n) {
+  clear: left;
 }
 @media screen and (min-width: 50em) {
   .portfolio-list .jetpack-portfolio {
@@ -1564,8 +1557,14 @@ div.sharedaddy,
   .portfolio-list .jetpack-portfolio:nth-child(2n) {
     margin-right: 2em;
   }
+  .portfolio-list .jetpack-portfolio:nth-child(3n) {
+    clear: none;
+  }
   .portfolio-list .jetpack-portfolio:nth-child(4n) {
     margin-right: 0;
+  }
+  .portfolio-list .jetpack-portfolio:nth-child(5n) {
+    clear: left;
   }
 }
 
