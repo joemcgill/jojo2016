@@ -1331,18 +1331,6 @@ ul.instagram-pics {
   width: 100%;
 }
 
-.entry-content a:not(.more-link) {
-  display: inline;
-  padding-left: .125em;
-  padding-right: .125em;
-  background-color: rgba(230, 215, 77, 0.4);
-  text-decoration: none;
-  transition: background-color 300ms ease-in-out;
-}
-.entry-content a:not(.more-link):hover, .entry-content a:not(.more-link):focus {
-  background-color: rgba(230, 215, 77, 0.7);
-}
-
 .page-content,
 .entry-content,
 .entry-summary {
@@ -1399,7 +1387,7 @@ ul.instagram-pics {
 .entry-title a:focus {
   text-decoration: none;
   color: #000;
-  background-image: linear-gradient(to top, #fff 0%, #fff 49%, #E6D74D 50%, #E6D74D 100%);
+  background-image: linear-gradient(to top, #fff 0%, #fff 49%, #FDE724 50%, #FDE724 100%);
   background-size: 5px 5px;
   background-repeat: repeat-x;
   background-position: 0 96.5%;
