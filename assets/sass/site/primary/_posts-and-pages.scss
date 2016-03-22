@@ -52,10 +52,6 @@
 		@include font-size(2.125);
 	}
 
-	&::first-letter {
-		text-transform: capitalize;
-	}
-
 	a,
 	a:hover,
 	a:focus,

@@ -1376,10 +1376,6 @@ ul.instagram-pics {
     font-size: 2.125rem;
   }
 }
-.page-title::first-letter,
-.entry-title::first-letter {
-  text-transform: capitalize;
-}
 .page-title a,
 .page-title a:hover,
 .page-title a:focus,
