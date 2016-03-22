@@ -141,6 +141,7 @@ function jojo2016_the_category_items( $categories = array() ) {
 		'home-decor-interiors',
 		'recipes',
 		'travel',
+		'diy',
 	);
 
 	if ( ! is_array( $categories ) || empty( $categories ) ) {

@@ -1160,7 +1160,7 @@ ul.instagram-pics {
 }
 @media screen and (min-width: 50em) {
   .site-categories .category-list {
-    max-width: calc( 600px + 6em );
+    max-width: calc( 750px + 8em );
   }
 }
 
@@ -1175,18 +1175,25 @@ ul.instagram-pics {
 .site-categories .category-item:nth-child(2n) {
   margin-right: 0;
 }
-.site-categories .category-item:nth-child(3) {
+.site-categories .category-item:nth-child(2n + 1) {
   clear: both;
+}
+@media screen and (max-width: 49.9375em) {
+  .site-categories .category-item:nth-child(2n+1):last-child {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (min-width: 50em) {
   .site-categories .category-item {
-    width: calc( 25% - 1.5em );
+    width: calc( 20% - 1.6em );
     margin-right: 2em;
   }
   .site-categories .category-item:nth-child(2n) {
     margin-right: 2em;
   }
-  .site-categories .category-item:nth-child(3) {
+  .site-categories .category-item:nth-child(2n + 1) {
     clear: none;
   }
   .site-categories .category-item:last-child {
