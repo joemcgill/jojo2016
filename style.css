@@ -1338,6 +1338,10 @@ ul.instagram-pics {
   width: 100%;
 }
 
+.entry-content img[class*='wp-image'] {
+  margin-bottom: 1em;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
