@@ -116,3 +116,17 @@ function jojo2016_filter_portfolio_sizes( $sizes ) {
 	return $sizes;
 }
 add_filter( 'wp_calculate_image_sizes', 'jojo2016_filter_portfolio_sizes' );
+
+add_post_type_support( 'jetpack-portfolio', 'page-attributes' );
+
+// If Simple Page Ordering is active, filter the portfolio order.
+if ( class_exists( 'Simple_Page_Ordering' ) ) {
+	add_action( 'pre_get_posts', 'jojo2016_filter_jetpack_portfolio_query' );
+
+	function jojo2016_filter_jetpack_portfolio_query( $query ) {
+		if ( ! is_admin() && 'jetpack-portfolio' === $query->get( 'post_type' ) ) {
+			$query->set( 'orderby', 'menu_order' );
+			$query->set( 'order', 'ASC' );
+		}
+	}
+}
