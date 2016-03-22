@@ -836,6 +836,9 @@ a:hover, a:active {
   background-position: center;
   background-repeat: no-repeat;
 }
+.icon:hover, .icon:focus {
+  opacity: .6;
+}
 
 .icon-text {
   height: 1px;
