@@ -166,6 +166,13 @@ function jojo2016_filter_the_archive_title( $title ) {
 }
 add_filter( 'get_the_archive_title', 'jojo2016_filter_the_archive_title' );
 
+
+function jojo2016_filter_excerpt_more() {
+	global $post;
+
+	return sprintf( '&hellip;  <a class="more-link" href="%s">More&nbsp;&rarr;</a>', esc_url( get_permalink( $post->ID ) ) );
+}
+add_filter( 'excerpt_more', 'jojo2016_filter_excerpt_more' );
 /**
  * Implement the Custom Header feature.
  */

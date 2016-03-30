@@ -27,10 +27,20 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
 
 	@media screen and (min-width: $bp_2) {
 		font-size: 1.125em;
+	}
+}
+
+.entry-summary {
+	&::before,
+	&::after {
+		@include clearfix();
+	}
+
+	&::after {
+		@include clearfix-after();
 	}
 }
 
@@ -39,6 +49,10 @@
 	margin: 0 0 1.5em;
 }
 
+.more-link {
+	@include slug-style();
+	font-size: .75em;
+}
 
 .page-title,
 .entry-title {

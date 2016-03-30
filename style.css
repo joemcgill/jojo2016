@@ -1345,11 +1345,6 @@ ul.instagram-pics {
   margin-bottom: 1em;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
 @media screen and (min-width: 50em) {
   .page-content,
   .entry-content,
@@ -1358,9 +1353,28 @@ ul.instagram-pics {
   }
 }
 
+.entry-summary::before, .entry-summary::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+.entry-summary::after {
+  clear: both;
+}
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.more-link {
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.333;
+  font-size: .75em;
 }
 
 .page-title,
