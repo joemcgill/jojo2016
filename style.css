@@ -1344,6 +1344,7 @@ ul.instagram-pics {
 
 .entry-content img[class*='wp-image'] {
   margin-bottom: 1em;
+  display: block;
 }
 
 @media screen and (min-width: 50em) {
