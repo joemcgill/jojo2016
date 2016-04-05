@@ -173,6 +173,15 @@ function jojo2016_filter_excerpt_more() {
 	return sprintf( '&hellip;  <a class="more-link" href="%s">More&nbsp;&rarr;</a>', esc_url( get_permalink( $post->ID ) ) );
 }
 add_filter( 'excerpt_more', 'jojo2016_filter_excerpt_more' );
+
+function jojo2016_filter_content_width( $content_width ) {
+	if ( is_single() && 'jetpack-portfolio' === get_post_type() ) {
+		global $content_width;
+		$content_width = 1072;
+	}
+}
+add_action( 'template_redirect', 'jojo2016_filter_content_width' );
+
 /**
  * Implement the Custom Header feature.
  */
