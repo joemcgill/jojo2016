@@ -1694,6 +1694,8 @@ object {
   text-align: center;
   vertical-align: top;
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 .gallery-columns-2 .gallery-item {
   max-width: 50%;
