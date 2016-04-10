@@ -41,7 +41,6 @@ if ( ! function_exists( 'jojo2016_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 750, 750, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -80,6 +79,7 @@ if ( ! function_exists( 'jojo2016_setup' ) ) :
 
 		// Add custom image sizes.
 		add_image_size( 'square-500', 500, 500, true );
+		add_image_size( 'square-750', 750, 750, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'jojo2016_setup' );
