@@ -21,7 +21,8 @@
 	width: 100%;
 }
 
-.entry-content img[class*='wp-image'] {
+.entry-content img[class*='wp-image'],
+.entry-header .size-post-thumbnail {
 	margin-bottom: 1em;
 	display: block;
 }
