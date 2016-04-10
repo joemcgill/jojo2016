@@ -1663,6 +1663,12 @@ object {
   max-width: 100%;
 }
 
+.jp-carousel-image-meta,
+.jp-carousel-image-exif,
+#jp-carousel-comments-loading {
+  display: none !important;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/

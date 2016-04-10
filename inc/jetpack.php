@@ -130,3 +130,13 @@ if ( class_exists( 'Simple_Page_Ordering' ) ) {
 		}
 	}
 }
+
+function jojo2016_remove_attachment_comments( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if ( 'attachment' === $post->post_type ) {
+		return false;
+	}
+
+	return $open;
+}
+add_filter( 'comments_open', 'jojo2016_remove_attachment_comments', 10 , 2 );
