@@ -245,6 +245,35 @@ div.sharedaddy,
 	}
 }
 
+.jetpack-porfolio-tile {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	background-color: rgba(#e5e5e5, .333);
+	border: 1px solid #e5e5e5;
+
+	// Force the div to a square
+	&::before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+}
+
+.jetpack-portfolio-tile-title {
+	position: absolute;
+	top: 50%;
+	left: 1em;
+	right: 1em;
+	transform: translateY(-50%);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: $font__alt;
+	font-size: 1.5em;
+	font-weight: normal;
+	line-height: $font__line-height-headers;
+}
+
 .portfolio-list .portfolio-title {
 	@include slug-style();
 	margin-top: .25em;

@@ -34,17 +34,21 @@ get_header(); ?>
 				<?php } ?>
 				<div class="portfolio-list">
 				<?php
+				// Set up category placeholder
+				$current_category = '';
+
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+				foreach ( $portfolio_terms as $term ) {
+					printf( '<div class="jetpack-portfolio jetpack-porfolio-tile"><h2 class="jetpack-portfolio-tile-title">%s</h2></div>', $term->name );
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content-jetpack-portfolio' );
+					while ( have_posts() ) : the_post();
+						if ( has_term( $term->name, 'jetpack-portfolio-type', $post ) ) {
+							get_template_part( 'template-parts/content-jetpack-portfolio' );
+						}
+					endwhile;
 
-				endwhile;
+					rewind_posts();
+				}
 				?>
 				</div>
 			</div>

@@ -1583,6 +1583,35 @@ div.sharedaddy,
   }
 }
 
+.jetpack-porfolio-tile {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(229, 229, 229, 0.333);
+  border: 1px solid #e5e5e5;
+}
+.jetpack-porfolio-tile::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.jetpack-portfolio-tile-title {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "freight-text-pro", sans-serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.333;
+}
+
 .portfolio-list .portfolio-title {
   font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
   font-size: .8em;
