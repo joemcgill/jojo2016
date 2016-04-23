@@ -1546,9 +1546,40 @@ div.sharedaddy,
   margin-left: .5em;
 }
 
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
 /**
  * Portfolio
  */
+.portfolio::before, .portfolio::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+.portfolio::after {
+  clear: both;
+}
+
 .portfolio-list {
   display: block;
 }
@@ -1637,25 +1668,6 @@ div.sharedaddy,
 
 .portfolio-list .wp-post-thumbnail {
   vertical-align: bottom;
-}
-
-/*--------------------------------------------------------------
-## Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  display: none;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-  word-wrap: break-word;
-}
-
-.bypostauthor {
-  display: block;
 }
 
 /*--------------------------------------------------------------
