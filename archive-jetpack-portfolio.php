@@ -39,7 +39,11 @@ get_header(); ?>
 
 				/* Start the Loop */
 				foreach ( $portfolio_terms as $term ) {
-					printf( '<div class="jetpack-portfolio jetpack-porfolio-tile"><h2 class="jetpack-portfolio-tile-title">%s</h2></div>', $term->name );
+
+					if ( ! is_tax() || is_tax( 'jetpack-portfolio-type', $term ) ) {
+						$tile_html = '<div class="jetpack-portfolio jetpack-porfolio-tile jetpack-portfolio-type-%s"><h2 class="jetpack-portfolio-tile-title">%s</h2></div>';
+						printf( $tile_html, $term->slug, $term->name );
+					}
 
 					while ( have_posts() ) : the_post();
 						if ( has_term( $term->name, 'jetpack-portfolio-type', $post ) ) {
@@ -69,4 +73,19 @@ get_header(); ?>
 <?php
 set_query_var( 'js-tmpl', true );
 get_template_part( 'template-parts/content-jetpack-portfolio' );
+
+$posts = get_portfolio_data();
+
+function get_portfolio_data() {
+	if ( ! $posts = get_transient( 'portfolio-items' ) ) {
+		$posts = wp_remote_get( get_site_url() . '/wp-json/wp/v2/jetpack-portfolio' );
+
+		// Cache portfolio results for 10 minutes.
+		set_transient( 'portfolio-items', $posts, 300 );
+	}
+
+	return $posts;
+}
+
+wp_localize_script( 'jojo2016-portfolo', 'portfolioData', array( 'portfolioTypes' => $portfolio_terms, 'portfolioItems' => json_decode( $posts['body'] ) ) );
 get_footer();

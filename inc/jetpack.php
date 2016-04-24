@@ -54,14 +54,17 @@ add_action( 'loop_start', 'jptweak_remove_share' );
  * Register custom REST API fields for jetpack portfolio items.
  */
 function jojo2016_register_rest_fields() {
-	register_rest_field( 'jetpack-portfolio',
-		'thumbnail',
-		array(
-			'get_callback'    => 'get_jojo_portfolio_thumbnail_api_data',
-			'update_callback' => null,
-			'schema'          => null,
-		)
-	);
+	register_rest_field( 'jetpack-portfolio', 'thumbnail', array(
+		'get_callback'    => 'get_jojo_portfolio_thumbnail_api_data',
+		'update_callback' => null,
+		'schema'          => null,
+	) );
+
+	register_rest_field( 'jetpack-portfolio', 'portfolioType', array(
+		'get_callback'    => 'get_jojo_portfolio_terms_api_data',
+		'update_callback' => null,
+		'schema'          => null,
+	) );
 }
 add_action( 'rest_api_init', 'jojo2016_register_rest_fields' );
 
@@ -88,6 +91,21 @@ function get_jojo_portfolio_thumbnail_api_data( $object, $field_name, $request )
 	}
 
 	return $thumbnail;
+}
+
+/**
+ * Callback function for REST API requests for terms.
+ */
+function get_jojo_portfolio_terms_api_data( $object, $field_name, $request ) {
+	$portfolio_types = array();
+
+	$terms = get_the_terms( $object['id'], 'jetpack-portfolio-type' );
+
+	foreach ( $terms as $term ) {
+		$portfolio_types[] = $term->slug;
+	}
+
+	return $portfolio_types;
 }
 
 /**
@@ -124,7 +142,7 @@ if ( class_exists( 'Simple_Page_Ordering' ) ) {
 	add_action( 'pre_get_posts', 'jojo2016_filter_jetpack_portfolio_query' );
 
 	function jojo2016_filter_jetpack_portfolio_query( $query ) {
-		if ( ! is_admin() && 'jetpack-portfolio' === $query->get( 'post_type' ) ) {
+		if ( ! is_admin() && ( 'jetpack-portfolio' === $query->get( 'post_type' ) || isset( $query->query['jetpack-portfolio-type'] ) ) ) {
 			$query->set( 'orderby', 'menu_order' );
 			$query->set( 'order', 'ASC' );
 		}

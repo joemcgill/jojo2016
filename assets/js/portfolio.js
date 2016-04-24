@@ -13,16 +13,11 @@ var jojo = jojo || {};
 
 		tagName: 'article',
 
-		className: 'jetpack-portfolio type-jetpack-portfolio status-publish has-post-thumbnail hentry jetpack-portfolio-type-social',
+		className: 'jetpack-portfolio type-jetpack-portfolio status-publish has-post-thumbnail hentry',
 
 		template: wp.template( 'portfolio-item' ),
 
-		initialize: function() {
-			// this.model.on( 'change:active' , function() {
-			// 	this.render();
-			// } );
-
-		},
+		initialize: function() {},
 
 		render: function() {
 			this.id = 'post-' + this.model.get( 'id' );
@@ -30,6 +25,19 @@ var jojo = jojo || {};
 			return this;
 		}
 
+	});
+
+	jojo.PortfolioTileView = Backbone.View.extend({
+		className: 'jetpack-portfolio jetpack-porfolio-tile',
+
+		initialize: function() {},
+
+		template: _.template( '<h2 class="jetpack-portfolio-tile-title"><%= name %></h2>' ),
+
+		render: function() {
+			this.$el.html( this.template( this.model ) );
+			return this;
+		}
 	});
 
 	// Default portfolio view.
@@ -44,7 +52,7 @@ var jojo = jojo || {};
 
 		initialize: function() {
 			this.$items = $('.portfolio-list');
-			this.listenTo( jojo.portfolio, 'reset', this.addAll );
+			this.listenTo( jojo.router, 'route:go', this.updateAll );
 		},
 
 		initRouter: function( e ) {
@@ -55,9 +63,36 @@ var jojo = jojo || {};
 			jojo.router.navigate( pathname, { trigger: true } );
 		},
 
+		updateAll: function() {
+			this.$items.html('');
+
+			var type = jojo.router.path;
+
+			_.each( portfolioData.portfolioTypes, function( term ) {
+				if ( 'all' === type || type === term.slug ) {
+					this.addTile( term );
+					this.addGroup( term.slug );
+				}
+			}, this );
+		},
+
 		addAll: function() {
 			this.$items.html('');
 			jojo.portfolio.each( this.addOne, this );
+		},
+
+		addGroup: function( type ) {
+			_.each( jojo.portfolio.models, function( item ) {
+				if ( -1 !== item.attributes.portfolioType.indexOf( type ) ) {
+					this.addOne( item );
+				}
+			}, this );
+		},
+
+		addTile: function( name ) {
+			console.log( name );
+			var tileView = new jojo.PortfolioTileView( { model: name } );
+			this.$items.append( tileView.render().el );
 		},
 
 		addOne: function( item ) {
@@ -73,16 +108,19 @@ var jojo = jojo || {};
 			''          : 'go'
 		},
 
-		go: function( pathname ) {
-			var url = '/wp-json/wp/v2/jetpack-portfolio';
+		path: 'all',
 
+		go: function( pathname ) {
+			/*
+			 * If the previous path wasn't all, we need to fetch a new group
+			 * otherwise, we can just hide the ones we don't need.
+			 */
 			if ( -1 !== pathname.indexOf( 'project-type' ) ) {
-				var type = pathname.replace( 'project-type/', '' );
-				url += '?filter[jetpack-portfolio-type]=' + type;
+				this.path = pathname.replace( 'project-type/', '' );
+			} else {
+				this.path = 'all';
 			}
 
-			jojo.portfolio.url = url;
-			jojo.portfolio.fetch( { reset: true } );
 		},
 	});
 
@@ -113,7 +151,9 @@ var jojo = jojo || {};
 		model: jojo.PortfolioItem
 	});
 
-	jojo.portfolio = new jojo.Portfolio();
+	// var portfolioData = portfolioData || {};
+
+	jojo.portfolio = new jojo.Portfolio( portfolioData.portfolioItems );
 
 	// Kick off the portfolio.
 	new jojo.PortfolioView();
