@@ -182,6 +182,20 @@ function jojo2016_filter_content_width( $content_width ) {
 }
 add_action( 'template_redirect', 'jojo2016_filter_content_width' );
 
+function jojo2016_filter_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
+	// Bail early if this isnt' a portfolio of if there is no post.
+	if ( 'jetpack-portfolio' !== $post->post_type || is_null( $output ) ) {
+		return $output;
+	}
+
+	$post_thumbnail = get_the_post_thumbnail( $post, 'square-500' );
+
+	return preg_replace( '|<a ([^>]+)>(.)+<\/a>|', '<a class="adjacent-link-image" $1>' . $post_thumbnail . '<span class="adjacent-link-label">' . $adjacent . '</span></a>', $output );
+}
+
+add_filter( 'previous_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
+add_filter( 'next_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
+
 /**
  * Implement the Custom Header feature.
  */
