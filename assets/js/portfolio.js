@@ -90,7 +90,6 @@ var jojo = jojo || {};
 		},
 
 		addTile: function( name ) {
-			console.log( name );
 			var tileView = new jojo.PortfolioTileView( { model: name } );
 			this.$items.append( tileView.render().el );
 		},
