@@ -1648,9 +1648,14 @@ div.sharedaddy,
   margin-top: 0;
   margin-bottom: 0;
   font-family: "freight-text-pro", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: normal;
   line-height: 1.333;
+}
+@media screen and (min-width: 50em) {
+  .jetpack-portfolio-tile-title {
+    font-size: 1.5em;
+  }
 }
 
 .portfolio-list .portfolio-title {
