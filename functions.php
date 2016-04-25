@@ -188,13 +188,13 @@ function jojo2016_filter_adjacent_post_link( $output, $format, $link, $post, $ad
 		return $output;
 	}
 
-	$post_thumbnail = get_the_post_thumbnail( $post, 'square-500' );
+	$post_thumbnail = get_the_post_thumbnail( $post, 'thumbnail' );
 
 	return preg_replace( '|<a ([^>]+)>(.)+<\/a>|', '<a class="adjacent-link-image" $1>' . $post_thumbnail . '<span class="adjacent-link-label">' . $adjacent . '</span></a>', $output );
 }
 
-add_filter( 'previous_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
-add_filter( 'next_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
+// add_filter( 'previous_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
+// add_filter( 'next_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
 
 /**
  * Implement the Custom Header feature.

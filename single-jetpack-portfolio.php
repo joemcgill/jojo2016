@@ -14,14 +14,13 @@ get_header(); ?>
 
 		<?php
 
-
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) {
+			the_post();
 			get_template_part( 'template-parts/content-jetpack-portfolio-full' );
-
-			the_post_navigation();
-
-		endwhile; // End of the loop.
+		}
 		?>
+
+		<?php the_post_navigation(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
