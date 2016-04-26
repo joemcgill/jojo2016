@@ -15,7 +15,7 @@
 		<a href="{{ data.link }}">
 			<img width="500" height="500" src="{{ data.thumbnail.src }}" class="attachment-square-500 size-square-500 wp-post-image" alt="{{ data.thumbnail.alt }}" srcset="{{ data.thumbnail.srcset }}" sizes="(max-width: 50em) calc(50vw - 3em), (max-width: 68em) calc(25vw - 8em), 244px">
 		</a>
-		<h3 class="portfolio-title"><a href="{{ data.link }}" rel="bookmark">{{ data.title.rendered }}</a></h3>
+		<h3 class="portfolio-title"><a href="{{ data.link }}" rel="bookmark">{{{ data.title.rendered }}}</a></h3>
 	</header>
 </script>
 <?php } else { ?>
