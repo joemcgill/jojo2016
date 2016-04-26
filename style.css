@@ -1261,6 +1261,7 @@ ul.instagram-pics {
 }
 
 .content-area {
+  width: 100%;
   max-width: 100%;
 }
 @media screen and (min-width: 50em) {
@@ -1306,6 +1307,7 @@ ul.instagram-pics {
 
 .full-width .site-main {
   margin-right: 0;
+  width: 100%;
 }
 
 .full-width iframe {
