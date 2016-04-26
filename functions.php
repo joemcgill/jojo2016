@@ -190,7 +190,7 @@ function jojo2016_filter_adjacent_post_link( $output, $format, $link, $post, $ad
 
 	$post_thumbnail = get_the_post_thumbnail( $post, 'thumbnail' );
 
-	return preg_replace( '|<a ([^>]+)>(.)+<\/a>|', '<a class="adjacent-link-image" $1>' . $post_thumbnail . '<span class="adjacent-link-label">' . $adjacent . '</span></a>', $output );
+	return preg_replace( '|<a ([^>]+)>(.+)<\/a>|', '<a class="adjacent-link-image" $1>' . $post_thumbnail . '</a><span class="adjacent-link-label">' . strtoupper( $adjacent ) . '<br><a $1>$2</a></span>', $output );
 }
 
 add_filter( 'previous_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
