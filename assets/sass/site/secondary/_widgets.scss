@@ -110,13 +110,11 @@ ul.instagram-pics {
 }
 
 /**
- * Widget text
+ * Social Widget
  */
-.widget_text {
+ 
+.jojo_social_widget {
 	padding: .25em .5em;
 	border-radius: 3px;
-
-	&:last-child {
-		border: 2px solid rgba(74, 74, 74, .3);
-	}
+	border: 2px solid rgba(74, 74, 74, .3);
 }
