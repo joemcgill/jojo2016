@@ -2,7 +2,6 @@
 	clear: both;
 	display: block;
 	width: 100%;
-	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	z-index: -1;
@@ -128,7 +127,7 @@
 	}
 }
 
-@media screen and ( max-width: $bp_2 ) {
+@media screen and ( max-width: calc($bp_2 - 1px) ) {
 	.main-navigation  {
 		background-color: $color__background-footer;
 		padding-left: 1em;

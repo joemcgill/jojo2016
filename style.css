@@ -566,7 +566,6 @@ a:hover, a:active {
   clear: both;
   display: block;
   width: 100%;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   z-index: -1;
@@ -612,7 +611,7 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .menu-primary-nav-container {
     margin-top: -50px;
   }
@@ -628,7 +627,7 @@ a:hover, a:active {
   line-height: 1.333;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .main-navigation .menu-item:nth-child(2) {
     margin-right: 380px;
   }
@@ -658,7 +657,7 @@ a:hover, a:active {
   background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .menu-toggle {
     display: none;
   }
@@ -667,7 +666,7 @@ a:hover, a:active {
     max-height: none;
   }
 }
-@media screen and (max-width: 50em) {
+@media screen and (max-width: calc($bp_2 - 1px)) {
   .main-navigation {
     background-color: #4A4A4A;
     padding-left: 1em;
@@ -1048,7 +1047,7 @@ ul.instagram-pics {
   padding-top: 1.5em;
   padding-bottom: 0;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-header {
     padding-top: 2.75em;
     padding-bottom: 2.75em;
@@ -1068,7 +1067,7 @@ ul.instagram-pics {
 .toggled + .site-header-drawer {
   max-height: 70px;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-header-drawer {
     position: relative;
     top: 3em;
@@ -1090,7 +1089,7 @@ ul.instagram-pics {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-header-drawer .search-form {
     max-width: 30em;
   }
@@ -1122,7 +1121,7 @@ ul.instagram-pics {
   position: relative;
   margin-bottom: 1.5em;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-branding {
     margin-bottom: 0;
   }
@@ -1181,7 +1180,7 @@ ul.instagram-pics {
 .site-categories .category-list::after {
   clear: both;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-categories .category-list {
     max-width: calc( 750px + 8em );
   }
@@ -1201,14 +1200,14 @@ ul.instagram-pics {
 .site-categories .category-item:nth-child(2n + 1) {
   clear: both;
 }
-@media screen and (max-width: 49.9375em) {
+@media screen and (max-width: 50.9375em) {
   .site-categories .category-item:nth-child(2n+1):last-child {
     float: none;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-categories .category-item {
     width: calc( 20% - 1.6em );
     margin-right: 2em;
@@ -1284,7 +1283,7 @@ ul.instagram-pics {
   width: 100%;
   max-width: 100%;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .content-area {
     float: left;
     margin: 0 -33% 0 0;
@@ -1299,7 +1298,7 @@ ul.instagram-pics {
 .site-main {
   margin-bottom: 2em;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-main {
     margin-right: calc(33% + 40px);
   }
@@ -1340,7 +1339,7 @@ ul.instagram-pics {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .site-content .widget-area, .site-categories .widget-area, .site-info .widget-area {
     float: right;
     overflow: hidden;
@@ -1385,7 +1384,7 @@ ul.instagram-pics {
   display: block;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .page-content,
   .entry-content,
   .entry-summary {
@@ -1426,7 +1425,7 @@ ul.instagram-pics {
   font-size: 1.75rem;
   line-height: 1.333;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .page-title,
   .entry-title {
     font-size: 34px;
@@ -1632,7 +1631,7 @@ div.sharedaddy,
 .portfolio-list .jetpack-portfolio:nth-child(2n + 1) {
   clear: left;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .portfolio-list .jetpack-portfolio {
     max-width: calc( 25% - 1.5em );
     margin-right: 2em;
@@ -1679,7 +1678,7 @@ div.sharedaddy,
   font-weight: normal;
   line-height: 1.333;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .jetpack-portfolio-tile-title {
     font-size: 1.5em;
   }
@@ -1795,7 +1794,7 @@ object {
   width: calc(100% - .75em);
   vertical-align: bottom;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 51em) {
   .gallery-item {
     margin-bottom: 1.5em;
   }
