@@ -196,6 +196,16 @@ function jojo2016_filter_adjacent_post_link( $output, $format, $link, $post, $ad
 add_filter( 'previous_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
 add_filter( 'next_post_link', 'jojo2016_filter_adjacent_post_link', 10, 5 );
 
+
+// Disable the Featured Video Plus filter on sidebar items.
+function jojo2016_remove_popular_posts_videos( $post_id, $post_thumbnail_id, $size ) {
+	global $featured_video_plus;
+	if ( ! is_null( $featured_video_plus ) && 'thumbnail' === $size ) {
+		remove_filter( 'post_thumbnail_html', array( $featured_video_plus, 'filter_post_thumbnail' ), 99, 5 );
+	}
+}
+add_action( 'begin_fetch_post_thumbnail_html', 'jojo2016_remove_popular_posts_videos', 10, 3 );
+
 /**
  * Implement the Custom Header feature.
  */
