@@ -18,6 +18,13 @@
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail', array( 'class' => 'alignright' ) );
+		} else {
+			$attachments = get_attached_media( 'image' );
+			if ( ! empty( $attachments ) ) {
+				// Make sure we're on the first image in the loop.
+				reset( $attachments );
+				echo wp_get_attachment_image( key( $attachments ), 'thumbnail', false, array( 'class' => 'alignright' ) );
+			}
 		}
 		?>
 		<?php the_excerpt(); ?>
