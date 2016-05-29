@@ -1332,6 +1332,12 @@ ul.instagram-pics {
   margin-right: auto;
 }
 
+.page-template-page-full .site-main {
+  max-width: 48em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-content .widget-area, .site-categories .widget-area, .site-info .widget-area {
   max-width: 25em;
   margin-left: auto;
