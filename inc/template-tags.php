@@ -160,29 +160,20 @@ function jojo2016_the_category_items( $categories = array() ) {
 		// Get the URL of this category.
 		$category_link = get_term_link( $category->term_id );
 
-		// Create the thumbnail.
-		$post_meta_query = array(
-			'key' => '_thumbnail_id',
-			'compare' => 'EXISTS',
-		);
-
 		$post_query_args = array(
 			// @codingStandardsIgnoreLine
 			'cat'            => $category->cat_ID,
-			'meta_query'     => array(
-				'key'     => '_thumbnail_id',
-				'compare' => 'EXISTS',
-			),
-			'posts_per_page' => 1,
+			'posts_per_page' => 5,
 			'fields'         => 'ids',
 		);
 
 		$post_query = new WP_Query( $post_query_args );
 
-		if ( $post_query ) {
-			$category_thumbnail_url = get_the_post_thumbnail_url( $post_query->posts[0], 'thumbnail' );
-		} else {
-			$category_thumbnail_url = 'https://placehold.it/400x400';
+		// Loop through posts until we find one with a thumbnail and then break out.
+		foreach( $post_query->posts as $cat_post ) {
+			if ( $category_thumbnail_url = get_the_post_thumbnail_url( $cat_post, 'thumbnail' ) ) {
+				break;
+			};
 		}
 
 		$category_thumbnail = sprintf( '<img class="category-thumb" src="%s">', esc_url( $category_thumbnail_url ) );
