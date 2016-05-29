@@ -207,6 +207,36 @@ function jojo2016_remove_popular_posts_videos( $post_id, $post_thumbnail_id, $si
 add_action( 'begin_fetch_post_thumbnail_html', 'jojo2016_remove_popular_posts_videos', 10, 3 );
 
 /**
+ * Add a Mailchimp signup form to the end of posts.
+ *
+ * @since 1.1.0
+ * @param string $content The pre-filtered content of a post.
+ * @return string The content of a post.
+ */
+function jojo2016_add_mailchimp_signup_to_content( $content ) {
+	if ( is_singular( 'post' ) && function_exists( 'mailchimpSF_signup_form' ) ) {
+		// Turn on output buffering to catch the HTML.
+		ob_start();
+		?>
+		<div class="mc-inline-signup block-large">
+			<div class="mc-inline-signup-content">
+				<h3 class="block-header">Like this post?</h3>
+				<p class="block-text">Sign up for our email list to recieve exclusive extras.</p>
+			</div>
+			<?php mailchimpSF_signup_form(); ?>
+		</div>
+		<?php
+
+		// Append the mailchimp block to the content and cleanup the buffer.
+		$content .= ob_get_contents();
+		ob_end_clean();
+	}
+
+	return $content;
+}
+add_filter( 'the_content', 'jojo2016_add_mailchimp_signup_to_content', 99 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

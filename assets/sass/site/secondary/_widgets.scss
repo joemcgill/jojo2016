@@ -55,31 +55,6 @@
 }
 
 /**
- * Mailchimp styles
- */
-
-#mc_subheader,
-.mc_merge_var:nth-child(1n+3),
-.mc_required,
-.mc_interests_header,
-.mc_interest,
-#mc-indicates-required,
-.mergeRow {
-	display: none;
-}
-
-#mc_signup .mc_var_label {
-	@include slug-style();
-	font-size: .625em;
-	margin-bottom: .25em;
-}
-
-#mc_signup #mc_signup_submit {
-	width: 100%;
-	margin-top: 0;
-}
-
-/**
  * WP Instagram Widget
  */
 
@@ -112,9 +87,7 @@ ul.instagram-pics {
 /**
  * Social Widget
  */
- 
+
 .jojo_social_widget {
-	padding: .25em .5em;
-	border-radius: 3px;
-	border: 2px solid rgba(74, 74, 74, .3);
+	@extend .block;
 }

@@ -1,0 +1,26 @@
+.block {
+	margin-bottom: 1.5em;
+	padding: .25em .5em;
+	border-radius: 3px;
+	border: 1px solid rgba($color__text-main, .3);
+}
+
+.block-large {
+	@extend .block;
+	padding: .5em .75em;
+}
+
+.block-center {
+	@extend .block;
+	text-align: center;
+}
+
+.block-header {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: $font__line-height-headers;
+}
+
+.block-text {
+	margin-bottom: .25em;
+}

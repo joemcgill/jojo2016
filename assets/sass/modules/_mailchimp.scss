@@ -1,0 +1,40 @@
+#mc_subheader,
+.mc_merge_var:nth-child(1n+3),
+.mc_required,
+.mc_interests_header,
+.mc_interest,
+#mc-indicates-required,
+.mergeRow {
+	display: none;
+}
+
+#mc_signup .mc_var_label {
+	@include slug-style();
+	font-size: .625em;
+	margin-bottom: .25em;
+}
+
+#mc_signup #mc_signup_submit {
+	width: 100%;
+	margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# Inline content blocks
+--------------------------------------------------------------*/
+.mc-inline-signup #mc_signup_form {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mc-inline-signup .mc_custom_border_hdr {
+	display: none;
+}
+
+.mc-inline-signup .mc_signup_submit {
+	text-align: left;
+}
+
+.mc-inline-signup #mc_signup #mc_signup_submit {
+	width: 10em;
+}

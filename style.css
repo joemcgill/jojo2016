@@ -902,6 +902,83 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+.block, .block-large, .block-center, .jojo_social_widget {
+  margin-bottom: 1.5em;
+  padding: .25em .5em;
+  border-radius: 3px;
+  border: 1px solid rgba(66, 66, 66, 0.3);
+}
+
+.block-large {
+  padding: .5em .75em;
+}
+
+.block-center {
+  text-align: center;
+}
+
+.block-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.333;
+}
+
+.block-text {
+  margin-bottom: .25em;
+}
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+#mc_subheader,
+.mc_merge_var:nth-child(1n+3),
+.mc_required,
+.mc_interests_header,
+.mc_interest,
+#mc-indicates-required,
+.mergeRow {
+  display: none;
+}
+
+#mc_signup .mc_var_label {
+  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.333;
+  font-size: .625em;
+  margin-bottom: .25em;
+}
+
+#mc_signup #mc_signup_submit {
+  width: 100%;
+  margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# Inline content blocks
+--------------------------------------------------------------*/
+.mc-inline-signup #mc_signup_form {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mc-inline-signup .mc_custom_border_hdr {
+  display: none;
+}
+
+.mc-inline-signup .mc_signup_submit {
+  text-align: left;
+}
+
+.mc-inline-signup #mc_signup #mc_signup_submit {
+  width: 10em;
+}
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
@@ -968,35 +1045,6 @@ a:hover, a:active {
 }
 
 /**
- * Mailchimp styles
- */
-#mc_subheader,
-.mc_merge_var:nth-child(1n+3),
-.mc_required,
-.mc_interests_header,
-.mc_interest,
-#mc-indicates-required,
-.mergeRow {
-  display: none;
-}
-
-#mc_signup .mc_var_label {
-  font-family: "brandon-grotesque", "freight-sans-pro", sans-serif;
-  font-size: .8em;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.333;
-  font-size: .625em;
-  margin-bottom: .25em;
-}
-
-#mc_signup #mc_signup_submit {
-  width: 100%;
-  margin-top: 0;
-}
-
-/**
  * WP Instagram Widget
  */
 ul.instagram-pics {
@@ -1028,12 +1076,6 @@ ul.instagram-pics {
 /**
  * Social Widget
  */
-.jojo_social_widget {
-  padding: .25em .5em;
-  border-radius: 3px;
-  border: 2px solid rgba(74, 74, 74, 0.3);
-}
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
