@@ -220,8 +220,8 @@ function jojo2016_add_mailchimp_signup_to_content( $content ) {
 		?>
 		<div class="mc-inline-signup block-large">
 			<div class="mc-inline-signup-content">
-				<h3 class="block-header">Like this post?</h3>
-				<p class="block-text">Sign up for our email list to recieve exclusive extras.</p>
+				<h3 class="block-header mc-inline-signup-header">Find out first!</h3>
+				<p class="block-text">Subscribe to our free newsletter for weekly updates &amp; exclusive content</p>
 			</div>
 			<?php mailchimpSF_signup_form(); ?>
 		</div>
