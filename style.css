@@ -568,7 +568,11 @@ a:hover, a:active {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  z-index: -1;
+}
+@media screen and (min-width: 51em) {
+  .main-navigation {
+    position: relative;
+  }
 }
 .main-navigation ul {
   max-height: 0;
@@ -1164,6 +1168,7 @@ ul.instagram-pics {
 @media screen and (min-width: 51em) {
   .site-branding {
     margin-bottom: 0;
+    z-index: -1;
   }
 }
 

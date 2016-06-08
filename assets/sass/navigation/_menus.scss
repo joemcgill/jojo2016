@@ -4,7 +4,10 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	z-index: -1;
+
+	@media screen and (min-width: $bp_2) {
+		position: relative;
+	}
 
 	ul {
 		max-height: 0;
