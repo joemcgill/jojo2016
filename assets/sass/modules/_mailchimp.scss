@@ -22,9 +22,60 @@
 /*--------------------------------------------------------------
 # Inline content blocks
 --------------------------------------------------------------*/
+.mc-inline-signup {
+	padding-top: 4em;
+  padding-bottom: 1em;
+  background-image: url(assets/img/mailing-list-sign-up-blog-post-2.jpg);
+  background-repeat: no-repeat;
+  background-position: 75% -20px;
+
+	@media screen and (min-width: 31em) {
+		padding-top: 2em;
+		background-size: 120%;
+	}
+
+	@media screen and (min-width: 38em) {
+		background-position: -90px -30px;
+	}
+
+	@media screen and (min-width: 44em) {
+		padding-top: 4em;
+		background-position: right -30px;
+		background-size: 100%;
+	}
+
+	@media screen and (min-width: 51em) {
+		padding-top: 2em;
+		background-size: 120%;
+	}
+
+	@media screen and (min-width: 57em) {
+		padding-top: 2em;
+		background-size: 105%;
+	}
+
+}
+
+.mc-inline-signup .mc-inline-signup-content {
+	max-width: 12em;
+	margin-bottom: 1em;
+	line-height: $font__line-height-headers;
+	text-shadow: 0 1px rgba(255, 255, 255, 1);
+
+	@media screen and (min-width: 31em) {
+		max-width: 17.25em;
+	}
+}
+
+.mc-inline-signup .mc-inline-signup-header {
+	font-family: $font__alt;
+}
+
 .mc-inline-signup #mc_signup_form {
 	padding-left: 0;
 	padding-right: 0;
+	max-width: 17.25em;
+
 }
 
 .mc-inline-signup .mc_custom_border_hdr {
