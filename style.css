@@ -670,7 +670,7 @@ a:hover, a:active {
     max-height: none;
   }
 }
-@media screen and (max-width: calc($bp_2 - 1px)) {
+@media screen and (max-width: 51em) {
   .main-navigation {
     background-color: #4A4A4A;
     padding-left: 1em;

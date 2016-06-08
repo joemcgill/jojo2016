@@ -130,7 +130,7 @@
 	}
 }
 
-@media screen and ( max-width: calc($bp_2 - 1px) ) {
+@media screen and ( max-width: $bp_2 ) {
 	.main-navigation  {
 		background-color: $color__background-footer;
 		padding-left: 1em;
