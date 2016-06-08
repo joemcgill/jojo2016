@@ -4,7 +4,10 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	z-index: -1;
+
+	@media screen and (min-width: $bp_2) {
+		position: relative;
+	}
 
 	ul {
 		max-height: 0;
@@ -127,7 +130,7 @@
 	}
 }
 
-@media screen and ( max-width: calc($bp_2 - 1px) ) {
+@media screen and ( max-width: $bp_2 ) {
 	.main-navigation  {
 		background-color: $color__background-footer;
 		padding-left: 1em;
