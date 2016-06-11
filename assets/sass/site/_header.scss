@@ -83,7 +83,6 @@
 
 	@media screen and (min-width: $bp_2) {
 		margin-bottom: 0;
-		z-index: -1;
 	}
 }
 
@@ -94,6 +93,10 @@
 	margin-left: auto;
 	margin-bottom: 0;
 	margin-right: auto;
+
+	@media screen and (min-width: $bp_2) {
+		display: inline-block;
+	}
 }
 
 .site-title a {

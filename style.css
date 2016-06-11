@@ -1223,7 +1223,6 @@ ul.instagram-pics {
 @media screen and (min-width: 51em) {
   .site-branding {
     margin-bottom: 0;
-    z-index: -1;
   }
 }
 
@@ -1234,6 +1233,11 @@ ul.instagram-pics {
   margin-left: auto;
   margin-bottom: 0;
   margin-right: auto;
+}
+@media screen and (min-width: 51em) {
+  .site-title {
+    display: inline-block;
+  }
 }
 
 .site-title a {
