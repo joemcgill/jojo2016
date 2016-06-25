@@ -80,6 +80,23 @@ if ( ! function_exists( 'jojo2016_setup' ) ) :
 		// Add custom image sizes.
 		add_image_size( 'square-500', 500, 500, true );
 		add_image_size( 'square-750', 750, 750, true );
+
+		/*
+		 * Adds a second image meta box for custom Pinterest images.
+		 *
+		 * Requires the Multiple Post Thumbnails plugin by Chris Scott
+		 * https://wordpress.org/plugins/multiple-post-thumbnails/
+		 *
+		 * @since 1.2.0
+		 */
+		if ( class_exists( 'MultiPostThumbnails' ) ) {
+			new MultiPostThumbnails( array(
+				'label' => 'Custom Pinterest Image',
+				'id' => 'jojo-pinterest-image',
+				'post_type' => 'post',
+			) );
+		}
+
 	}
 endif;
 add_action( 'after_setup_theme', 'jojo2016_setup' );
@@ -236,6 +253,11 @@ function jojo2016_add_mailchimp_signup_to_content( $content ) {
 }
 add_filter( 'the_content', 'jojo2016_add_mailchimp_signup_to_content', 99 );
 
+/**
+ * Force redirection of joannahawley.com to jojotastic.com.
+ *
+ * @since 1.2.0
+ */
 function jojo2016_force_canonical_redirects() {
 	if ( isset( $_SERVER['HTTP_HOST'] ) && 'joannahawley.com' === $_SERVER['HTTP_HOST'] ) {
 		header( 'HTTP/1.1 301 Moved Permanently' );
@@ -244,6 +266,7 @@ function jojo2016_force_canonical_redirects() {
 	}
 }
 add_action( 'init', 'jojo2016_force_canonical_redirects' );
+
 
 /**
  * Implement the Custom Header feature.

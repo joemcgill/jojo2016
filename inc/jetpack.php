@@ -177,3 +177,34 @@ function jojo2016_related_custom_image( $media, $post_id, $args ) {
 	}
 }
 add_filter( 'jetpack_images_get_images', 'jojo2016_related_custom_image', 10, 3 );
+
+/**
+ * Filter the Pinterest sharing image via Jetpack.
+ *
+ * This relies on the Multi Post Thumbnails plugin being active. If the post
+ * has a custom pinterest image set, it will be used by Jetpack instead of
+ * the featured image when the post is shared using the Jetpack pinterest button.
+ *
+ * @since 1.2.0
+ *
+ * @param string $url The Pinterest sharing URL.
+ * @return string The filtered URL string.
+ */
+function jojo2016_filter_jetpack_sharing_pinterest_image( $url ) {
+	if ( class_exists( 'MultiPostThumbnails' ) ) {
+		// Get the pintereset image ID if it's set.
+		$pinterest_image_id = MultiPostThumbnails::get_post_thumbnail_id( 'post', 'jojo-pinterest-image', get_the_ID() );
+
+		/*
+		 * If we've identified a custom pinterest attachment ID, let's replace the
+		 * featured image URL with this custom URL.
+		 */
+		if ( $pinterest_image_id ) {
+			$pinterest_image_url = wp_get_attachment_url( $pinterest_image_id );
+			$url = preg_replace( '|&media=[^&]+|', '&media=' . rawurlencode( $pinterest_image_url ), $url );
+		}
+	}
+
+	return $url;
+}
+add_filter( 'jetpack_sharing_pinterest_share_url', 'jojo2016_filter_jetpack_sharing_pinterest_image' );
