@@ -236,6 +236,15 @@ function jojo2016_add_mailchimp_signup_to_content( $content ) {
 }
 add_filter( 'the_content', 'jojo2016_add_mailchimp_signup_to_content', 99 );
 
+function jojo2016_force_canonical_redirects() {
+	if ( isset( $_SERVER['HTTP_HOST'] ) && 'joannahawley.com' === $_SERVER['HTTP_HOST'] ) {
+		header( 'HTTP/1.1 301 Moved Permanently' );
+		header( 'Location: http://jojotastic.com' );
+		exit();
+	}
+}
+add_action( 'init', 'jojo2016_force_canonical_redirects' );
+
 /**
  * Implement the Custom Header feature.
  */
