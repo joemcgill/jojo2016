@@ -158,3 +158,22 @@ function jojo2016_remove_attachment_comments( $open, $post_id ) {
 	return $open;
 }
 add_filter( 'comments_open', 'jojo2016_remove_attachment_comments', 10 , 2 );
+
+function jojo2016_related_custom_image( $media, $post_id, $args ) {
+	if ( $media ) {
+			return $media;
+	} else {
+		$permalink = get_permalink( $post_id );
+		$url = apply_filters( 'jetpack_photon_url', get_stylesheet_directory_uri() . '/assets/img/jetpack-default.jpg' );
+
+		return array(
+			array(
+				'type'  => 'image',
+				'from'  => 'custom_fallback',
+				'src'   => esc_url( $url ),
+				'href'  => $permalink,
+			),
+		);
+	}
+}
+add_filter( 'jetpack_images_get_images', 'jojo2016_related_custom_image', 10, 3 );
