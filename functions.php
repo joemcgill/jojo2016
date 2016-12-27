@@ -267,6 +267,17 @@ function jojo2016_force_canonical_redirects() {
 }
 add_action( 'init', 'jojo2016_force_canonical_redirects' );
 
+/**
+ * Filter the length of Public Preview Posts nonces.
+ *
+ * See: https://wordpress.org/plugins/public-post-preview/faq/
+ *
+ * @since 1.2.1
+ */
+function jojo2016_nonce_life() {
+	return 60 * 60 * 24 * 30; // 30 days.
+}
+add_filter( 'ppp_nonce_life', 'jojo_nonce_life' );
 
 /**
  * Implement the Custom Header feature.
