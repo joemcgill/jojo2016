@@ -78,7 +78,8 @@ $posts = get_portfolio_data();
 
 function get_portfolio_data() {
 	if ( ! $posts = get_transient( 'portfolio-items' ) ) {
-		$posts = wp_remote_get( get_site_url() . '/wp-json/wp/v2/jetpack-portfolio?per_page=100' );
+		$request = new WP_REST_Request( 'GET', '/wp/v2/jetpack-portfolio?per_page=100' );
+		$posts = rest_do_request( $request );
 
 		// Cache portfolio results for 10 minutes.
 		set_transient( 'portfolio-items', $posts, 300 );
